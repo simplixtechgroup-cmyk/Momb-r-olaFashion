@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le Lookbook & Vidéothèque | Mombèrèola Fashion Cotonou</title>
+  <meta name="description" content="Explorez les créations de Latifath à Cotonou : gélé couture, maquillage mariée, tresses d'art africaines et vidéos de soins en cabine. Choisissez votre style.">
+  <meta name="theme-color" content="#121011">
+
+  <!-- Favicons officiels -->
+  <link rel="icon" href="logo/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="logo/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="logo/favicon-192.png">
+  <link rel="apple-touch-icon" href="logo/apple-touch-icon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Lookbook & Vidéos — Mombèrèola Fashion par Latifath">
+  <meta property="og:description" content="Chaque geste est une signature. Découvrez notre galerie de réalisations et choisissez votre style pour votre prochain événement.">
+  <meta property="og:image" content="images/og-image-mombereola-fashion.jpg">
+  <meta property="og:locale" content="fr_BJ">
+
+  <!-- Typographies Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Socle CSS Modulaire -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset-base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+
+  <style>
+    /* ── En-Tête Lookbook ── */
+    .lookbook-hero {
+      padding: 40px 0 24px;
+      text-align: center;
+    }
+
+    /* ── Barre de Filtres Instantanés ── */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 32px 0 44px;
+    }
+
+    .filter-pill {
+      padding: 10px 22px;
+      border-radius: var(--radius-full);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      border: 1px solid var(--c-gold-border);
+      background: var(--c-white);
+      color: var(--c-text-muted);
+      transition: var(--transition-fast);
+      cursor: pointer;
+    }
+
+    .filter-pill.active, .filter-pill:hover {
+      background: var(--c-bordeaux);
+      color: var(--c-white);
+      border-color: var(--c-bordeaux);
+      box-shadow: 0 4px 14px rgba(104, 26, 42, 0.25);
+    }
+
+    /* ── Grille Éditoriale Lookbook ── */
+    .lookbook-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    @media (min-width: 768px) {
+      .lookbook-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    }
+
+    @media (min-width: 1024px) {
+      .lookbook-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    .lookbook-card {
+      background: var(--c-white);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      border: 1px solid var(--c-gold-border);
+      box-shadow: var(--shadow-subtle);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition-smooth);
+    }
+
+    .lookbook-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card);
+      border-color: var(--c-gold);
+    }
+
+    .lookbook-thumb {
+      aspect-ratio: 4 / 5.2;
+      overflow: hidden;
+      position: relative;
+      background: var(--c-blush-soft);
+    }
+
+    .lookbook-thumb img, .lookbook-thumb video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .lookbook-card:hover .lookbook-thumb img {
+      transform: scale(1.04);
+    }
+
+    .lookbook-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(18, 16, 17, 0.85);
+      color: #FFFFFF;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      backdrop-filter: blur(6px);
+    }
+
+    .lookbook-details {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .lookbook-title {
+      font-size: 0.96rem;
+      font-family: var(--font-serif);
+      font-weight: 700;
+      color: var(--c-ink);
+      line-height: 1.25;
+    }
+
+    .lookbook-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--c-bordeaux);
+      border: 1px solid var(--c-gold-border);
+      padding: 8px 12px;
+      border-radius: var(--radius-full);
+      background: var(--c-blush-soft);
+      transition: var(--transition-fast);
+      margin-top: 6px;
+    }
+
+    .lookbook-btn:hover {
+      background: var(--c-bordeaux);
+      color: #FFFFFF;
+      border-color: var(--c-bordeaux);
+    }
+
+    /* ── Section Dédiée Vidéothèque ── */
+    .video-section {
+      background: linear-gradient(180deg, var(--c-blush-soft) 0%, #FFFFFF 100%);
+      padding: 80px 0;
+      margin-top: 60px;
+      border-top: 1px solid var(--c-gold-border);
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-top: 36px;
+    }
+
+    @media (min-width: 640px) {
+      .video-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 1024px) {
+      .video-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .video-box {
+      background: var(--c-white);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--c-gold-border);
+      box-shadow: var(--shadow-subtle);
+    }
+
+    .video-box video {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      background: #000;
+      object-fit: cover;
+    }
+
+    .video-caption-box {
+      padding: 16px;
+    }
+
+    .video-caption-box strong {
+      display: block;
+      font-size: 1rem;
+      font-family: var(--font-serif);
+      color: var(--c-ink);
+      margin-bottom: 4px;
+    }
+
+    .video-caption-box p {
+      font-size: 0.82rem;
+      color: var(--c-text-muted);
+      line-height: 1.5;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ========================================================================
+       1. EN-TÊTE
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-identity" aria-label="Mombèrèola Fashion Accueil">
+        <img src="logo/logo-mombereola-fashion.png" alt="Logo de l'institut Mombèrèola Fashion" width="50" height="50">
+        <div class="brand-text">
+          <span class="brand-title">Mombèrèola Fashion</span>
+          <p class="brand-sub">Le Lookbook &amp; Créations</p>
+        </div>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Menu principal">
+        <a href="index.html" class="nav-link">Accueil</a>
+        <a href="mariee-et-ceremonies.html" class="nav-link">Mariage & Cortège</a>
+        <a href="academie.html" class="nav-link">Académie</a>
+        <a href="lookbook.html" class="nav-link active">Lookbook</a>
+        <a href="index.html#contact" class="btn btn-gold" style="padding: 10px 22px; font-size: 0.8rem;">
+          Prendre Rendez-vous
+        </a>
+      </nav>
+
+      <button class="burger-btn" id="burgerToggle" aria-label="Ouvrir le menu">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ========================================================================
+       2. HERO DU LOOKBOOK
+       ======================================================================== -->
+    <section class="lookbook-hero">
+      <div class="container" style="max-width: 720px;">
+        <span class="badge badge-gold">Portfolio d'Artisanat de Luxe</span>
+        <h1 style="margin-top: 14px; margin-bottom: 12px;">Le Lookbook Mombèrèola</h1>
+        <p class="founder-tagline" style="font-size: 1.35rem; margin-bottom: 10px;">Chaque geste est une signature.</p>
+        <p>
+          Parcourez nos réalisations à Cotonou. Cliquez sur <strong>« Je veux ce style »</strong> sous n'importe quelle photo pour réserver exactement cette mise en beauté auprès de Madame Latifath.
+        </p>
+
+        <!-- Filtres par catégorie -->
+        <div class="filter-bar">
+          <button class="filter-pill active" data-filter="all">Toutes nos Créations</button>
+          <button class="filter-pill" data-filter="mariee">Mariée &amp; Cortège</button>
+          <button class="filter-pill" data-filter="gele">Gélé Couture &amp; Cérémonie</button>
+          <button class="filter-pill" data-filter="tresses">Tresses &amp; Coiffures</button>
+          <button class="filter-pill" data-filter="coulisses">Coulisses &amp; Étapes</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+       3. GRILLE ÉDITORIALE DES 19 PHOTOS
+       ======================================================================== -->
+    <section class="container">
+      <div class="lookbook-grid" id="lookbookItems">
+
+        <!-- 1. Mariée Voile Blanc -->
+        <div class="lookbook-card" data-category="mariee">
+          <div class="lookbook-thumb">
+            <span class="lookbook-badge">Mariée</span>
+            <img src="images/maquillage-mariee-voile-robe-de-mariage-mombereola-fashion.webp" 
+                 alt="Maquillage de mariée avec voile et robe de mariage" width="607" height="1080" loading="lazy">
+          </div>
+          <div class="lookbook-details">
+            <p class="lookbook-title">Mariée Reine d'un Jour</p>
+            <a href="https://wa.me/2290196149051?text=Bonjour%20Madame%20Latifath%2C%20j%27ai%20vu%20la%20cr%C3%A9ation%20%22Mari%C3%A9e%20Reine%20d%27un%20Jour%22%20sur%20votre%20Lookbook%20et%20je%20veux%20ce%20style" 
+               target="_blank" rel="noopener noreferrer" class="lookbook-btn">Je veux ce style &rarr;</a>
+          </div>
+        </div>
+
+        <!-- 2. Gélé Rose Couture -->
+        <div class="lookbook-card" data-category="gele">
+          <div class="lookbook-thumb">
+            <span class="lookbook-badge">Cérémonie</span>
+            <img src="images/maquillage-ceremonie-gele-rose-tenue-brodee-mombereola-fashion.webp" 
+                 alt="Maquillage de cérémonie avec gélé rose et tenue brodée rose" width="606" height="1080" loading="lazy">
+          </div>
+          <div class="lookbook-details">
+            <p class="lookbook-title">Gélé Rose &amp; Broderies Cérémonie</p>
+            <a href="https://wa.me/2290196149051?text=Bonjour%20Madame%20Latifath%2C%20j%27ai%20vu%20la%20cr%C3%A9ation%20%22G%C3%A9l%C3%A9%20Rose%20%26%20Broderies%22%20sur%20votre%20Lookbook%20et%20je%20veux%20ce%20style" 
+               target="_blank" rel="noopener noreferrer" class="lookbook-btn">Je veux ce style &rarr;</a>
+          </div>
+        </div>
+
+        <!-- 3. Gélé Vert d'Eau & Menthe -->
+        <div class="lookbook-card" data-category="gele">
+          <div class="lookbook-thumb">
+            <span class="lookbook-badge">Gélé</span>
+            <img src="images/maquillage-soiree-gele-vert-d-eau-tenue-fleurs-mombereola-fashion.webp" 
+                 alt="Maquillage de soirée avec gélé vert d'eau et tenue brodée de fleurs orangées" width="606" height="1080" loading="lazy">
+          </div>
+          <div class="lookbook-details">
+            <p class="lookbook-title">Gélé Menthe &amp; Fleurs Étoffées</p>
+            <a href="https://wa.me/2290196149051?text=Bonjour%20Madame%20Latifath%2C%20j%27ai%20vu%20la%20cr%C3%A9ation%20%22G%C3%A9l%C3%A9%20Menthe%22%20sur%20votre%20Lookbook%20et%20je%20veux%20ce%20style" 
+               target="_blank" rel="noopener noreferrer" class="lookbook-btn">Je veux ce style &rarr;</a>
+          </div>
+        </div>
+
+        <!-- 4. Gélé Noir & Sequins Verts -->
+        <div class="lookbook-card" data-category="gele">
+          <div class="lookbook-thumb">
+            <span class="lookbook-badge">Gala</span>
+            <img src="images/maquillage-glamour-gele-noir-tenue-verte-mombereola-fashion.webp" 
+                 alt="Maquillage glamour avec gélé noir et tenue verte à sequins" width="606" height="1080" loading="lazy">
+          </div>
+          <div class="lookbook-details">
+            <p class="lookbook-title">Gélé Noir Impérial &amp; Sequins</p>
+            <a href="https://wa.me/2290196149051?text=Bonjour%20Madame%20Latifath%2C%20j%27ai%20vu%20la%20cr%C3%A9ation%20%22G%C3%A9l%C3%A9%20Noir%20Imp%C3%A9rial%22%20sur%20votre%20Lookbook%20et%20je%20veux%20ce%20style" 
+               target="_blank" rel="noopener noreferrer" class="lookbook-btn">Je veux ce style &rarr;</a>
+          </div>
+        </div>
+
+        <!-- 5. Foulard Jaune & Boubou Doré -->
+        <div class="lookbook-card" data-category="gele">
+          <div class="lookbook-thumb">
+            <span class="lookbook-badge">Coutume</span>
+            <img src="images/maquillage-glamour-foulard-jaune-tenue-doree-mombereola-fashion.webp" 
+                 alt="Cliente avec foulard jaune et tenue dorée" width="606" height="1080" loading="lazy">
+          </div>
+          <div class="lookbook-details">
+            <p class="lookbook-title">Foulard Solaire &amp; Teint Doré</p>
+            <a href="https://wa.me/2290196149051?text=Bonjour%20Madame%20Latifath%2C%20j%27ai%20vu%20la%20cr%C3%A9ation%20%22Foulard%20Solaire%20%26%20Teint%20Dor%C3%A9%22%20sur%20votre%20Lookbook%20et%20je%20veux%20ce%20style" 
+               target="_blank" rel="noopener noreferrer" class="lookbook-btn">Je veux ce style &rarr;</a>
+          </div>
+        </div>
+
+        <!-- 6. Gélé Vert Émeraude & Boubou Jaune -->
+        <div class="lookbook-card" data-category="gele">
+          <div class="lookbook-thumb">
+            <span class="lookbook-badge">Tradition</span>
+            <img src="images/maquillage-fete-gele-vert-boubou-jaune-mombereola-fashion.webp" 
+                 alt="Gélé vert émeraude et boubou jaune brodé" width="607" height="1080" loading="lazy">
+          </div>
+          <div class="lookbook-details">
+            <p class="lookbook-title">Gélé Vert Émeraude Majestueux</p>
+            <a href="https://wa.me/2290196149051?text=Bonjour%20Madame%20Latifath%2C%20j%27ai%20vu%20la%20cr%C3%A9ation%20%22G%C3%A9l%C3%A9%20Vert%20%C3%89meraude%22%20sur%20votre%20Lookbook%20et%20je%20veux%20ce%20style" 
+               target="_blank" rel="noopener noreferrer" class="lookbook-btn">Je veux ce style &rarr;</a>
+          </div>
+        </div>
+
+        <!-- 7. Tresses Africaines Acajou -->
+        <div class="lookbook-card" data-category="tresses">
+          <div class="lookbook-thumb">
+            <span class="lookbook-badge">Tresses</span>
+            <img src="images/tresses-africaines-cliente-devant-logo-mombereola-fashion.webp" 
+                 alt="Tresses africaines de précision acajou" width="675" height="1200" loading="lazy">
+          </div>
+          <div class="lookbook-details">
+            <p class="lookbook-title">Nattes Collées d'Art Acajou</p>
+            <a href="https://wa.me/2290196149051?text=Bonjour%20Madame%20Latifath%2C%20j%27ai%20vu%20la%20cr%C3%A9ation%20%22Nattes%20Coll%C3%A9es%20d%27Art%22%20sur%20votre%20Lookbook%20et%20je%20veux%20ce%20style" 
+               target="_blank" rel="noopener noreferrer" class="lookbook-btn">Je veux ce style &rarr;</a>
+          </div>
+        </div>
+
+        <!-- 8. Chignon d'Apparat & Robe Corail -->
+        <div class="lookbook-card" data-category="tresses">
+          <div class="lookbook-thumb">
+            <span class="lookbook-badge">Coiffure</span>
+            <img src="images/portrait-maquillage-coiffure-chignon-robe-corail-mombereola-fashion.webp" 
+                 alt="Portrait avec maquillage et chignon, robe corail brodée" width="795" height="1200" loading="lazy">
+          </div>
+          <div class="lookbook-details">
+            <p class="lookbook-title">Chignon d'Apparat Sculpté</p>
+            <a href="https://wa.me/2290196149051?text=Bonjour%20Madame%20Latifath%2C%20j%27ai%20vu%20la%20cr%C3%A9ation%20%22Chignon%20d%27Apparat%22%20sur%20votre%20Lookbook%20et%20je%20veux%20ce%20style" 
+               target="_blank" rel="noopener noreferrer" class="lookbook-btn">Je veux ce style &rarr;</a>
+          </div>
+        </div>
+
+        <!-- 9. Cérémonie Dentelle & Bonnet Blanc -->
+        <div class="lookbook-card" data-category="mariee">
+          <div class="lookbook-thumb">
+            <span class="lookbook-badge">Cortège</span>
+            <img src="images/maquillage-naturel-bonnet-blanc-dentelle-mombereola-fashion.webp" 
+                 alt="Maquillage naturel avec bonnet blanc et robe en dentelle" width="607" height="1080" loading="lazy">
+          </div>
+          <div class="lookbook-details">
+            <p class="lookbook-title">Bonnet Blanc &amp; Dentelle Sainte</p>
+            <a href="https://wa.me/2290196149051?text=Bonjour%20Madame%20Latifath%2C%20j%27ai%20vu%20la%20cr%C3%A9ation%20%22Dentelle%20Sainte%22%20sur%20votre%20Lookbook%20et%20je%20veux%20ce%20style" 
+               target="_blank" rel="noopener noreferrer" class="lookbook-btn">Je veux ce style &rarr;</a>
+          </div>
+        </div>
+
+        <!-- 10. Henné & Foulard Moutarde -->
+        <div class="lookbook-card" data-category="mariee">
+          <div class="lookbook-thumb">
+            <span class="lookbook-badge">Dot</span>
+            <img src="images/maquillage-cliente-foulard-moutarde-henne-mains-mombereola-fashion.webp" 
+                 alt="Cliente avec henné sur les mains et foulard moutarde" width="608" height="1080" loading="lazy">
+          </div>
+          <div class="lookbook-details">
+            <p class="lookbook-title">Henné Coutumier &amp; Foulard</p>
+            <a href="https://wa.me/2290196149051?text=Bonjour%20Madame%20Latifath%2C%20j%27ai%20vu%20la%20cr%C3%A9ation%20%22Henn%C3%A9%20Coutumier%22%20sur%20votre%20Lookbook%20et%20je%20veux%20ce%20style" 
+               target="_blank" rel="noopener noreferrer" class="lookbook-btn">Je veux ce style &rarr;</a>
+          </div>
+        </div>
+
+        <!-- 11. Coulisses : Pose Fard Violet -->
+        <div class="lookbook-card" data-category="coulisses">
+          <div class="lookbook-thumb">
+            <span class="lookbook-badge">Coulisses</span>
+            <img src="images/maquillage-yeux-fard-violet-application-01-mombereola-fashion.webp" 
+                 alt="Application fard violet regard" width="607" height="1080" loading="lazy">
+          </div>
+          <div class="lookbook-details">
+            <p class="lookbook-title">L'Art du Regard Fard Violet</p>
+            <a href="https://wa.me/2290196149051?text=Bonjour%20Madame%20Latifath%2C%20je%20souhaite%20r%C3%A9server%20le%20maquillage%20du%20regard%20fard%20violet" 
+               target="_blank" rel="noopener noreferrer" class="lookbook-btn">Je veux ce style &rarr;</a>
+          </div>
+        </div>
+
+        <!-- 12. Coulisses : Contour des Lèvres -->
+        <div class="lookbook-card" data-category="coulisses">
+          <div class="lookbook-thumb">
+            <span class="lookbook-badge">Coulisses</span>
+            <img src="images/maquillage-levres-application-rouge-a-levres-mombereola-fashion.webp" 
+                 alt="Application du rouge à lèvres avec pinceau de précision" width="607" height="1080" loading="lazy">
+          </div>
+          <div class="lookbook-details">
+            <p class="lookbook-title">Précision Lèvres Satinées</p>
+            <a href="https://wa.me/2290196149051?text=Bonjour%20Madame%20Latifath%2C%20je%20veux%20r%C3%A9server%20une%20mise%20en%20beaut%C3%A9%20l%C3%A8vres%20satin%C3%A9es" 
+               target="_blank" rel="noopener noreferrer" class="lookbook-btn">Je veux ce style &rarr;</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+       4. VIDÉOTHÈQUE EN MOUVEMENT (5 VIDÉOS MP4)
+       ======================================================================== -->
+    <section class="video-section">
+      <div class="container">
+        <div style="text-align: center; max-width: 660px; margin: 0 auto;">
+          <span class="badge badge-bordeaux">Gestuelle &amp; Vidéothèque</span>
+          <h2 style="margin-top: 12px; margin-bottom: 12px;">L'Expérience en Direct de la Loge</h2>
+          <p>La preuve du geste : observez l'hygiène stricte des soins en cabine et la minutie des finitions coiffure sous vos yeux.</p>
+        </div>
+
+        <div class="video-grid">
+
+          <!-- Vidéo 1 : Soin Détox Vapeur -->
+          <div class="video-box">
+            <video src="videos/video-soin-du-visage-esthetique-mombereola-fashion.mp4" 
+                   poster="videos/video-soin-du-visage-esthetique-mombereola-fashion-poster.webp" 
+                   controls playsinline preload="none"></video>
+            <div class="video-caption-box">
+              <strong>Soin Cabine sous Vapeur Ozonée</strong>
+              <p>Extraction minutieuse des impuretés sous contrôle esthétique et hygiène hospitalière.</p>
+            </div>
+          </div>
+
+          <!-- Vidéo 2 : Masque Hydratant -->
+          <div class="video-box">
+            <video src="videos/video-soin-du-visage-masque-esthetique-mombereola-fashion.mp4" 
+                   poster="videos/video-soin-du-visage-masque-esthetique-mombereola-fashion-poster.webp" 
+                   controls playsinline preload="none"></video>
+            <div class="video-caption-box">
+              <strong>Application du Masque Régénérant</strong>
+              <p>Texture réparatrice au pinceau doux pour apaiser et satiner le grain de peau.</p>
+            </div>
+          </div>
+
+          <!-- Vidéo 3 : Massage & Gommage -->
+          <div class="video-box">
+            <video src="videos/video-soin-du-visage-massage-gommage-mombereola-fashion.mp4" 
+                   poster="videos/video-soin-du-visage-massage-gommage-mombereola-fashion-poster.webp" 
+                   controls playsinline preload="none"></video>
+            <div class="video-caption-box">
+              <strong>Modelage Facial &amp; Gommage</strong>
+              <p>Drainage manuel des tensions pour défroisser les traits avant la pose du maquillage.</p>
+            </div>
+          </div>
+
+          <!-- Vidéo 4 : Tresses Démonstration -->
+          <div class="video-box">
+            <video src="videos/video-tresses-africaines-cliente-salon-mombereola-fashion.mp4" 
+                   poster="videos/video-tresses-africaines-cliente-salon-mombereola-fashion-poster.webp" 
+                   controls playsinline preload="none"></video>
+            <div class="video-caption-box">
+              <strong>Tresses d'Art Devant le Logo</strong>
+              <p>Régularité chirurgicale des séparations et éclat des longueurs tressées.</p>
+            </div>
+          </div>
+
+          <!-- Vidéo 5 : Finition Spray Fixateur -->
+          <div class="video-box">
+            <video src="videos/video-tresses-finition-coiffure-spray-mombereola-fashion.mp4" 
+                   poster="videos/video-tresses-finition-coiffure-spray-mombereola-fashion-poster.webp" 
+                   controls playsinline preload="none"></video>
+            <div class="video-caption-box">
+              <strong>Finition Haute Tenue au Spray</strong>
+              <p>Fixation anti-humidité pour garantir la brillance et le maintien durant toute la cérémonie.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       5. PIED DE PAGE
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4 style="font-family: var(--font-serif); letter-spacing: 0.04em;">Mombèrèola Fashion</h4>
+          <p style="margin-bottom: 12px;">
+            L'excellence de la beauté africaine incarnée par Latifath à Cotonou.
+          </p>
+          <p style="color: var(--c-gold); font-family: var(--font-serif); font-style: italic;">
+            Révéler la beauté, transmettre un métier.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4 style="font-size: 1.15rem;">Navigation</h4>
+          <p><a href="index.html">Accueil Maison</a></p>
+          <p><a href="mariee-et-ceremonies.html">Mariage & Cortège</a></p>
+          <p><a href="academie.html">Académie d'État</a></p>
+          <p><a href="lookbook.html">Lookbook & Vidéos</a></p>
+        </div>
+
+        <div class="footer-col">
+          <h4 style="font-size: 1.15rem;">Prendre Rendez-vous</h4>
+          <p>Réservation anticipée recommandée pour vos cérémonies.</p>
+          <p style="margin-top: 8px; color: var(--c-gold); font-weight: 700;">+229 01 96 14 90 51</p>
+          <p>Cotonou, République du Bénin</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="yearPlaceholder"></span> Mombèrèola Fashion. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       6. BARRE MOBILE FLOTTANTE
+       ======================================================================== -->
+  <aside class="mobile-concierge-bar" aria-label="Action rapide mobile">
+    <a href="tel:+2290196149051" class="mobile-call-action" aria-label="Appeler Latifath">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    </a>
+    <a href="https://wa.me/2290196149051?text=Bonjour%20Madame%20Latifath%2C%20je%20consulte%20votre%20Lookbook%20et%20je%20souhaite%20r%C3%A9server%20une%20prestation" 
+       target="_blank" rel="noopener noreferrer" class="mobile-whatsapp-action">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.14c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.12 8.12 0 0 1-1.25-4.37c0-4.49 3.65-8.14 8.14-8.14 2.18 0 4.22.85 5.76 2.39a8.08 8.08 0 0 1 2.38 5.75c0 4.49-3.65 8.14-8.14 8.14z"/></svg>
+      Réserver Mon Modèle
+    </a>
+  </aside>
+
+  <!-- Script Filtre Instantané 60 fps & Menu -->
+  <script>
+    document.getElementById('yearPlaceholder').textContent = new Date().getFullYear();
+
+    // Menu Mobile
+    const burgerToggle = document.getElementById('burgerToggle');
+    const desktopNav = document.querySelector('.desktop-nav');
+    burgerToggle.addEventListener('click', () => {
+      const isVisible = desktopNav.style.display === 'flex';
+      desktopNav.style.display = isVisible ? 'none' : 'flex';
+      desktopNav.style.flexDirection = 'column';
+      desktopNav.style.position = 'absolute';
+      desktopNav.style.top = 'var(--header-height)';
+      desktopNav.style.left = '0';
+      desktopNav.style.right = '0';
+      desktopNav.style.background = '#FFFFFF';
+      desktopNav.style.padding = '24px';
+      desktopNav.style.boxShadow = 'var(--shadow-floating)';
+      desktopNav.style.borderBottom = '1px solid var(--c-gold-border)';
+    });
+
+    // Filtre 60 FPS sans lag
+    const filterPills = document.querySelectorAll('.filter-pill');
+    const cards = document.querySelectorAll('.lookbook-card');
+
+    filterPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        filterPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+
+        const filter = pill.getAttribute('data-filter');
+
+        cards.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
