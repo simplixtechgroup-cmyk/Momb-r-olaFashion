@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Conciergerie Privée | Mombèrèola Fashion Cotonou</title>
+  <meta name="description" content="Prenez rendez-vous à l'institut Mombèrèola Fashion avec Madame Latifath à Cotonou. Mariages, soins cabine, tresses d'art et inscriptions à l'Académie.">
+  <meta name="theme-color" content="#121011">
+
+  <!-- Favicons officiels -->
+  <link rel="icon" href="logo/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="logo/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="logo/favicon-192.png">
+  <link rel="apple-touch-icon" href="logo/apple-touch-icon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact & Rendez-vous — Mombèrèola Fashion par Latifath">
+  <meta property="og:description" content="Collaborons. Un projet, un événement, une formation ? Latifath se tient à votre entière disposition à Cotonou.">
+  <meta property="og:image" content="images/og-image-mombereola-fashion.jpg">
+  <meta property="og:locale" content="fr_BJ">
+
+  <!-- Typographies Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Socle CSS Modulaire -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset-base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+
+  <style>
+    /* ── Hero Contact ── */
+    .contact-hero {
+      padding: 40px 0 24px;
+      text-align: center;
+    }
+
+    /* ── Grille Principale Contact ── */
+    .contact-main-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 36px;
+      margin: 40px 0 70px;
+    }
+
+    @media (min-width: 992px) {
+      .contact-main-grid {
+        grid-template-columns: 1fr 1.25fr;
+        gap: 56px;
+      }
+    }
+
+    /* ── Cartes Coordonnées ── */
+    .contact-card-info {
+      background: var(--c-white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--c-gold-border);
+      padding: 36px 28px;
+      box-shadow: var(--shadow-subtle);
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .contact-method {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .contact-icon-wrapper {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--c-gold-light);
+      border: 1px solid var(--c-gold-border);
+      color: var(--c-bordeaux);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-method-text strong {
+      display: block;
+      font-size: 0.95rem;
+      color: var(--c-ink);
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .contact-method-text span, .contact-method-text a {
+      font-size: 0.88rem;
+      color: var(--c-text-muted);
+    }
+
+    .contact-method-text a:hover {
+      color: var(--c-bordeaux);
+    }
+
+    /* ── Boîte Formulaire Conciergerie ── */
+    .concierge-box {
+      background: var(--c-white);
+      border-radius: var(--radius-lg);
+      border: 1.5px solid var(--c-gold);
+      box-shadow: var(--shadow-card);
+      padding: 40px 24px;
+    }
+
+    @media (min-width: 768px) {
+      .concierge-box { padding: 48px 40px; }
+    }
+
+    .custom-field {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--c-gold-border);
+      background: var(--c-blush-soft);
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      color: var(--c-ink);
+      margin-top: 6px;
+    }
+
+    .custom-field:focus {
+      outline: none;
+      border-color: var(--c-gold);
+      background: #FFFFFF;
+    }
+
+    /* ── Bloc Réseaux Sociaux & Image ── */
+    .social-banner {
+      background: var(--c-blush-soft);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      border: 1px solid var(--c-gold-border);
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .social-tag {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--c-ink);
+      margin-top: 4px;
+    }
+  </style>
+
+  <!-- Schema.org SEO Local Business -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BeautySalon",
+    "name": "Mombèrèola Fashion",
+    "founder": "Latifath",
+    "image": "images/og-image-mombereola-fashion.jpg",
+    "telephone": "+2290196149051",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Cotonou",
+      "addressCountry": "BJ"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "08:00",
+        "closes": "19:30"
+      }
+    ],
+    "sameAs": [
+      "https://instagram.com",
+      "https://facebook.com",
+      "https://tiktok.com"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- ========================================================================
+       1. EN-TÊTE
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-identity" aria-label="Mombèrèola Fashion Accueil">
+        <img src="logo/logo-mombereola-fashion.png" alt="Logo officiel de Mombèrèola Fashion" width="50" height="50">
+        <div class="brand-text">
+          <span class="brand-title">Mombèrèola Fashion</span>
+          <p class="brand-sub">Contact &amp; Conciergerie</p>
+        </div>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Menu principal">
+        <a href="index.html" class="nav-link">Accueil</a>
+        <a href="mariee-et-ceremonies.html" class="nav-link">Mariage &amp; Cortège</a>
+        <a href="academie.html" class="nav-link">Académie</a>
+        <a href="lookbook.html" class="nav-link">Lookbook</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+        <a href="tel:+2290196149051" class="btn btn-gold" style="padding: 10px 22px; font-size: 0.8rem;">
+          Appeler le Salon
+        </a>
+      </nav>
+
+      <button class="burger-btn" id="burgerToggle" aria-label="Ouvrir le menu">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ========================================================================
+       2. HERO DE CONTACT (Page 9 du Portfolio)
+       ======================================================================== -->
+    <section class="contact-hero">
+      <div class="container" style="max-width: 680px;">
+        <span class="badge badge-gold">Prendre Attache</span>
+        <h1 style="margin-top: 14px; margin-bottom: 12px;">Collaborons</h1>
+        <p class="founder-tagline" style="font-size: 1.35rem; margin-bottom: 10px;">
+          Un projet, un événement, un partenariat ? Latifath se tient à votre disposition.
+        </p>
+        <p style="font-size: 0.95rem;">
+          Pour un rendez-vous privé au salon, une privatisation de loge pour mariage ou une inscription à l'académie, transmettez vos souhaits ci-dessous pour une réponse immédiate.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+       3. GRILLE CENTRALE DE PRISE DE CONTACT
+       ======================================================================== -->
+    <section class="container">
+      <div class="contact-main-grid">
+
+        <!-- Colonne Coordonnées Officielles -->
+        <div class="contact-card-info">
+          <div>
+            <span class="badge badge-bordeaux" style="margin-bottom: 12px;">Canaux Directs</span>
+            <h2 style="font-size: 1.8rem; margin-bottom: 16px;">L'Institut Mombèrèola</h2>
+            <p style="font-size: 0.9rem; line-height: 1.6;">
+              Un accueil bienveillant, discret et hautement professionnel au cœur de Cotonou.
+            </p>
+          </div>
+
+          <!-- Téléphone & WhatsApp -->
+          <div class="contact-method">
+            <div class="contact-icon-wrapper">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="contact-method-text">
+              <strong>Téléphone &amp; WhatsApp</strong>
+              <a href="tel:+2290196149051">+229 01 96 14 90 51</a>
+              <p style="font-size: 0.78rem; color: var(--c-gold-dark); margin-top: 2px;">Ligne directe de Madame Latifath</p>
+            </div>
+          </div>
+
+          <!-- Localisation -->
+          <div class="contact-method">
+            <div class="contact-icon-wrapper">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="contact-method-text">
+              <strong>Localisation du Salon</strong>
+              <span>[Quartier à préciser], Cotonou, Bénin</span>
+              <p style="font-size: 0.78rem; color: var(--c-text-muted); margin-top: 2px;">Cadre climatisé et loge privative</p>
+            </div>
+          </div>
+
+          <!-- Horaires de Réception -->
+          <div class="contact-method">
+            <div class="contact-icon-wrapper">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="contact-method-text">
+              <strong>Horaires d'Ouverture</strong>
+              <span>Lundi au Samedi : 08h00 – 19h30</span>
+              <p style="font-size: 0.78rem; color: var(--c-bordeaux); font-weight: 600; margin-top: 2px;">
+                Dimanche : Exclusivement réservé aux Mariées sur RDV
+              </p>
+            </div>
+          </div>
+
+          <!-- Carte Réseaux Sociaux (Page 9 du Portfolio) -->
+          <div class="social-banner">
+            <span style="font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--c-bordeaux);">
+              Instagram · Facebook · TikTok
+            </span>
+            <p class="social-tag">Mombèrèola Fashion</p>
+            <p style="font-size: 0.78rem; color: var(--c-text-muted); margin-top: 4px;">
+              Abonnez-vous pour suivre les publications quotidiennes.
+            </p>
+          </div>
+        </div>
+
+        <!-- Colonne Formulaire Conciergerie Instantanée -->
+        <div class="concierge-box">
+          <div style="margin-bottom: 24px;">
+            <span class="badge badge-gold">Réservation Électronique</span>
+            <h2 style="font-size: 1.9rem; margin-top: 10px; margin-bottom: 8px;">Conciergerie WhatsApp</h2>
+            <p style="font-size: 0.9rem; color: var(--c-text-muted);">
+              Choisissez votre prestation et indiquez votre créneau. Votre demande sera automatiquement mise en forme pour le WhatsApp de l'institut.
+            </p>
+          </div>
+
+          <form id="contactBookingForm">
+            <div style="display:grid; grid-template-columns: 1fr; gap: 16px;">
+              <div>
+                <label for="clientName" style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--c-ink);">Votre Nom &amp; Prénom</label>
+                <input type="text" id="clientName" class="custom-field" placeholder="Ex : Madame Ayaba T." required>
+              </div>
+
+              <div>
+                <label for="serviceCategory" style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--c-ink);">Prestation Souhaitée</label>
+                <select id="serviceCategory" class="custom-field">
+                  <option value="Mise en Beauté Mariée & Cortège de Famille">Mise en Beauté Mariée &amp; Cortège de Famille</option>
+                  <option value="Maquillage Événementiel / Soirée">Maquillage Événementiel / Soirée</option>
+                  <option value="Nouage de Gélé Couture / Foulard">Nouage de Gélé Couture / Foulard</option>
+                  <option value="Tresses d'Art Africaines / Nattes">Tresses d'Art Africaines / Nattes</option>
+                  <option value="Soin du Visage Détox en Cabine">Soin du Visage Détox en Cabine (Vapeur &amp; Masque)</option>
+                  <option value="Manucure & Pédicure Spa">Manucure &amp; Pédicure Spa</option>
+                  <option value="Inscription / Renseignement Académie d'État">Renseignement Académie &amp; Bourses d'État</option>
+                </select>
+              </div>
+
+              <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                <div>
+                  <label for="preferredDate" style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--c-ink);">Date Souhaitée</label>
+                  <input type="date" id="preferredDate" class="custom-field">
+                </div>
+                <div>
+                  <label for="preferredTime" style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--c-ink);">Heure Souhaitée</label>
+                  <input type="time" id="preferredTime" class="custom-field">
+                </div>
+              </div>
+
+              <div>
+                <label for="specialNote" style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--c-ink);">Précisions ou Tenue Cérémoniale</label>
+                <textarea id="specialNote" rows="3" class="custom-field" placeholder="Ex : Tenue jaune brodée, besoin d'un gélé vert et maquillage assorti..."></textarea>
+              </div>
+
+              <div style="margin-top: 12px; text-align: center;">
+                <button type="submit" class="btn btn-whatsapp" style="width: 100%; padding: 16px;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.14c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.12 8.12 0 0 1-1.25-4.37c0-4.49 3.65-8.14 8.14-8.14 2.18 0 4.22.85 5.76 2.39a8.08 8.08 0 0 1 2.38 5.75c0 4.49-3.65 8.14-8.14 8.14z"/></svg>
+                  Confirmer Mon Rendez-vous sur WhatsApp
+                </button>
+                <p style="font-size: 0.76rem; color: var(--c-text-muted); margin-top: 10px;">
+                  ✓ Réponse personnalisée garantie sous 1 heure par l'équipe de Madame Latifath.
+                </p>
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       4. PIED DE PAGE HAUTE MAISON
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4 style="font-family: var(--font-serif); letter-spacing: 0.04em;">Mombèrèola Fashion</h4>
+          <p style="margin-bottom: 12px;">
+            Maison de beauté et Académie professionnelle agréée d'État à Cotonou. Dirigée par Latifath depuis près de dix ans.
+          </p>
+          <p style="color: var(--c-gold); font-family: var(--font-serif); font-style: italic;">
+            Révéler la beauté, transmettre un métier.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4 style="font-size: 1.15rem;">Navigation du Site</h4>
+          <p><a href="index.html">Accueil Maison</a></p>
+          <p><a href="mariee-et-ceremonies.html">Mariage & Cortège</a></p>
+          <p><a href="academie.html">Académie d'État</a></p>
+          <p><a href="lookbook.html">Lookbook & Vidéos</a></p>
+        </div>
+
+        <div class="footer-col">
+          <h4 style="font-size: 1.15rem;">Permanence Loge</h4>
+          <p>Lundi au Samedi : 08h00 – 19h30</p>
+          <p>Dimanche : Réservé aux Mariées</p>
+          <p style="margin-top: 8px; color: var(--c-gold); font-weight: 700;">+229 01 96 14 90 51</p>
+          <p>Cotonou, République du Bénin</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="yearPlaceholder"></span> Mombèrèola Fashion · Institut de Beauté. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       5. BARRE MOBILE FLOTTANTE
+       ======================================================================== -->
+  <aside class="mobile-concierge-bar" aria-label="Action rapide mobile">
+    <a href="tel:+2290196149051" class="mobile-call-action" aria-label="Appeler Latifath">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    </a>
+    <a href="https://wa.me/2290196149051?text=Bonjour%20Madame%20Latifath%2C%20je%20souhaite%20r%C3%A9server%20un%20cr%C3%A9neau%20au%20salon" 
+       target="_blank" rel="noopener noreferrer" class="mobile-whatsapp-action">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.14c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.12 8.12 0 0 1-1.25-4.37c0-4.49 3.65-8.14 8.14-8.14 2.18 0 4.22.85 5.76 2.39a8.08 8.08 0 0 1 2.38 5.75c0 4.49-3.65 8.14-8.14 8.14z"/></svg>
+      Réserver par WhatsApp
+    </a>
+  </aside>
+
+  <!-- Script Générateur WhatsApp Multi-Prestations -->
+  <script>
+    document.getElementById('yearPlaceholder').textContent = new Date().getFullYear();
+
+    // Menu Mobile
+    const burgerToggle = document.getElementById('burgerToggle');
+    const desktopNav = document.querySelector('.desktop-nav');
+    burgerToggle.addEventListener('click', () => {
+      const isVisible = desktopNav.style.display === 'flex';
+      desktopNav.style.display = isVisible ? 'none' : 'flex';
+      desktopNav.style.flexDirection = 'column';
+      desktopNav.style.position = 'absolute';
+      desktopNav.style.top = 'var(--header-height)';
+      desktopNav.style.left = '0';
+      desktopNav.style.right = '0';
+      desktopNav.style.background = '#FFFFFF';
+      desktopNav.style.padding = '24px';
+      desktopNav.style.boxShadow = 'var(--shadow-floating)';
+      desktopNav.style.borderBottom = '1px solid var(--c-gold-border)';
+    });
+
+    // Générateur intelligent WhatsApp Conciergerie
+    document.getElementById('contactBookingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('clientName').value;
+      const service = document.getElementById('serviceCategory').value;
+      const date = document.getElementById('preferredDate').value || 'Date à convenir';
+      const time = document.getElementById('preferredTime').value || 'Heure à convenir';
+      const notes = document.getElementById('specialNote').value;
+
+      let message = `Bonjour Madame Latifath,\n\nJe souhaite prendre rendez-vous à l'institut Mombèrèola Fashion :\n• Cliente : *${name}*\n• Prestation : *${service}*\n• Date souhaitée : *${date}*\n• Heure souhaitée : *${time}*`;
+
+      if (notes.trim() !== '') {
+        message += `\n• Précisions : _${notes}_`;
+      }
+
+      message += `\n\nMerci de me confirmer la disponibilité du créneau !`;
+
+      const encodedUrl = `https://wa.me/2290196149051?text=${encodeURIComponent(message)}`;
+      window.open(encodedUrl, '_blank');
+    });
+  </script>
+
+</body>
+</html>
