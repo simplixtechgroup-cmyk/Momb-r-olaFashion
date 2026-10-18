@@ -1,0 +1,216 @@
+/* ==========================================================================
+   STRUCTURE GÉNÉRALE : EN-TÊTE, BARRE MOBILE & PIED DE PAGE
+   ========================================================================== */
+
+/* ── 1. EN-TÊTE FIXE ULTRA-LÉGER ── */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--header-height);
+  background: rgba(253, 245, 246, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--c-gold-border);
+  transition: var(--transition-smooth);
+}
+
+.header-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Bloc Logo + Titre */
+.brand-identity {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-identity img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid var(--c-gold);
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.25);
+}
+
+.brand-text h1, .brand-text .brand-title {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--c-ink);
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.brand-text .brand-sub {
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--c-bordeaux);
+  margin-top: 3px;
+  font-weight: 600;
+}
+
+/* Menu Ordinateur */
+.desktop-nav {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .nav-link {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--c-text-muted);
+    letter-spacing: 0.03em;
+    position: relative;
+    padding: 6px 0;
+  }
+
+  .nav-link:hover, .nav-link.active {
+    color: var(--c-bordeaux);
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background-color: var(--c-gold);
+    transition: var(--transition-fast);
+  }
+
+  .nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+  }
+}
+
+/* Bouton Burger Mobile */
+.burger-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 8px;
+  border-radius: var(--radius-sm);
+}
+
+@media (min-width: 992px) {
+  .burger-btn { display: none; }
+}
+
+.burger-line {
+  width: 100%;
+  height: 2px;
+  background-color: var(--c-ink);
+  border-radius: 2px;
+  transition: var(--transition-fast);
+}
+
+/* ── 2. BARRE MOBILE CONCIERGERIE WHATSAPP (CONVERSION MAXIMALE) ── */
+.mobile-concierge-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: var(--bottom-bar-height);
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid var(--c-gold-border);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 -4px 20px rgba(18, 16, 17, 0.08);
+}
+
+@media (min-width: 1024px) {
+  .mobile-concierge-bar { display: none; }
+}
+
+.mobile-call-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--c-blush-soft);
+  border: 1px solid var(--c-gold-border);
+  color: var(--c-bordeaux);
+  flex-shrink: 0;
+}
+
+.mobile-whatsapp-action {
+  flex-grow: 1;
+  height: 48px;
+  background-color: var(--c-wa-green);
+  color: var(--c-white);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  box-shadow: 0 4px 16px var(--c-wa-glow);
+}
+
+/* ── 3. PIED DE PAGE INSTITUTIONNEL ── */
+.site-footer {
+  background-color: var(--c-ink);
+  color: rgba(255, 255, 255, 0.72);
+  border-top: 2px solid var(--c-gold);
+  padding: 60px 0 32px;
+  margin-top: 80px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+
+@media (min-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 48px;
+  }
+}
+
+.footer-col h4 {
+  color: var(--c-white);
+  font-size: 1.35rem;
+  margin-bottom: 16px;
+}
+
+.footer-col p {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.9rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.45);
+}
