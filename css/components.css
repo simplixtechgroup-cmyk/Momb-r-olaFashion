@@ -1,8 +1,9 @@
 /* ==========================================================================
-   COMPOSANTS DE LUXE & INTERFACES DE CONVERSION
+   MOMBÈRÈOLA FASHION — COMPOSANTS HAUTE MAISON
+   Version consolidée & optimisée
    ========================================================================== */
 
-/* ── 1. BOUTONS COUTURE ── */
+/* ── 1. BOUTONS COUTURE & APPELS À L'ACTION ── */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -10,13 +11,14 @@
   gap: 10px;
   padding: 14px 28px;
   border-radius: var(--radius-full);
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   transition: var(--transition-fast);
   will-change: transform;
   white-space: nowrap;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -27,7 +29,7 @@
   transform: translateY(0);
 }
 
-/* Bouton Or Miroir (Inspiré du double anneau) */
+/* Or Ciselé Miroir */
 .btn-gold {
   background: linear-gradient(135deg, var(--c-gold) 0%, var(--c-gold-dark) 100%);
   color: var(--c-white);
@@ -39,7 +41,7 @@
   filter: brightness(1.05);
 }
 
-/* Bouton Noir Encre (Graphisme pur du regard) */
+/* Noir Encre Calligraphique */
 .btn-ink {
   background-color: var(--c-ink);
   color: var(--c-white);
@@ -49,7 +51,7 @@
   background-color: var(--c-bordeaux);
 }
 
-/* Bouton Contour Or Ciselé */
+/* Contour Or Précision */
 .btn-outline-gold {
   background: transparent;
   color: var(--c-ink);
@@ -61,7 +63,7 @@
   border-color: var(--c-gold-dark);
 }
 
-/* Bouton de Conversion Directe WhatsApp */
+/* WhatsApp Business Conversion */
 .btn-whatsapp {
   background-color: var(--c-wa-green);
   color: var(--c-white);
@@ -73,7 +75,32 @@
   box-shadow: 0 10px 26px rgba(37, 211, 102, 0.45);
 }
 
-/* ── 2. BADGES & DISTINCTIONS ── */
+/* Bouton Lookbook Modèle */
+.lookbook-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--c-bordeaux);
+  border: 1px solid var(--c-gold-border);
+  padding: 8px 14px;
+  border-radius: var(--radius-full);
+  background: var(--c-blush-soft);
+  transition: var(--transition-fast);
+  margin-top: 6px;
+}
+
+.lookbook-btn:hover {
+  background: var(--c-bordeaux);
+  color: var(--c-white);
+  border-color: var(--c-bordeaux);
+}
+
+/* ── 2. BADGES, LABELS & RUBANS ── */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -82,7 +109,7 @@
   border-radius: var(--radius-full);
   font-size: 0.74rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -104,7 +131,69 @@
   border: 1px solid rgba(216, 27, 96, 0.2);
 }
 
-/* ── 3. CARTES HAUTE MAISON ── */
+.package-tag {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--c-bordeaux);
+  color: var(--c-white);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 16px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(104, 26, 42, 0.3);
+}
+
+.lookbook-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(18, 16, 17, 0.85);
+  color: #FFFFFF;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(6px);
+}
+
+/* ── 3. LA SIGNATURE ARCHE ROMANE (PORTFOLIO LATIFATH) ── */
+.arch-frame {
+  position: relative;
+  border-radius: 200px 200px var(--radius-md) var(--radius-md);
+  overflow: hidden;
+  border: 1.5px solid var(--c-gold);
+  box-shadow: var(--shadow-card);
+  background-color: var(--c-blush-soft);
+  padding: 6px;
+  transition: var(--transition-smooth);
+}
+
+.arch-frame-inner {
+  border-radius: 194px 194px calc(var(--radius-md) - 4px) calc(var(--radius-md) - 4px);
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.arch-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-couture);
+}
+
+.arch-frame:hover img {
+  transform: scale(1.03);
+}
+
+/* ── 4. CARTES SPÉCIALISÉES & ÉCRINS ── */
 .card-luxury {
   background-color: var(--c-white);
   border-radius: var(--radius-md);
@@ -120,7 +209,392 @@
   border-color: var(--c-gold);
 }
 
-/* ── 4. SÉPARATEURS HAUTE COUTURE ── */
+/* Cartes d'Expertise 01 à 06 */
+.expertise-card {
+  background: var(--c-white);
+  border-radius: var(--radius-md);
+  padding: 36px 28px;
+  border: 1px solid var(--c-gold-border);
+  position: relative;
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.expertise-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--c-gold);
+}
+
+.expertise-number {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  color: var(--c-gold);
+  line-height: 1;
+  margin-bottom: 16px;
+  font-weight: 400;
+}
+
+.expertise-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  color: var(--c-ink);
+}
+
+/* Cartes de Formules Mariage & Cortège */
+.package-card {
+  background: var(--c-white);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--c-gold-border);
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: var(--transition-smooth);
+  position: relative;
+}
+
+.package-card.highlight {
+  background: var(--c-blush-soft);
+  border: 2px solid var(--c-gold);
+  box-shadow: var(--shadow-card);
+  transform: scale(1.02);
+}
+
+@media (max-width: 767px) {
+  .package-card.highlight { transform: none; }
+}
+
+.package-title {
+  font-size: 1.5rem;
+  margin-top: 8px;
+  margin-bottom: 6px;
+  color: var(--c-ink);
+  font-family: var(--font-serif);
+  font-weight: 700;
+}
+
+.package-subtitle {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--c-bordeaux);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.package-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 28px;
+  flex-grow: 1;
+}
+
+.package-features li {
+  font-size: 0.88rem;
+  color: var(--c-text-muted);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.5;
+}
+
+.package-features li svg {
+  color: var(--c-gold);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+/* Cartes Démonstration Savoir-Faire (1, 2, 3) */
+.step-card {
+  background: var(--c-white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--c-gold-border);
+  text-align: center;
+  transition: var(--transition-smooth);
+}
+
+.step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+
+.step-media {
+  height: 280px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.step-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.step-body {
+  padding: 20px;
+}
+
+.step-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--c-gold);
+  color: var(--c-white);
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+}
+
+.step-title {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--c-bordeaux);
+  font-weight: 700;
+}
+
+/* Cartes Cursus & Filières Académie */
+.curriculum-card {
+  background: var(--c-white);
+  border-radius: var(--radius-md);
+  padding: 32px 24px;
+  border: 1px solid var(--c-gold-border);
+  position: relative;
+  box-shadow: var(--shadow-subtle);
+  transition: var(--transition-smooth);
+}
+
+.curriculum-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-card);
+}
+
+.curriculum-year {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--c-gold);
+  line-height: 1;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.filiere-card {
+  background: var(--c-white);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  border: 1px solid var(--c-gold-border);
+  transition: var(--transition-smooth);
+}
+
+.filiere-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--c-gold);
+}
+
+.filiere-card h4 {
+  font-size: 1.3rem;
+  margin-top: 10px;
+  margin-bottom: 8px;
+  color: var(--c-ink);
+}
+
+/* Cartes Gélés & Lookbook */
+.gele-card, .ritual-card, .lookbook-card {
+  background: var(--c-white);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--c-gold-border);
+  box-shadow: var(--shadow-subtle);
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.gele-card:hover, .ritual-card:hover, .lookbook-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--c-gold);
+}
+
+.gele-media, .ritual-media, .lookbook-thumb {
+  aspect-ratio: 4 / 5.2;
+  overflow: hidden;
+  position: relative;
+  background: var(--c-blush-soft);
+}
+
+.gele-media img, .ritual-media img, .lookbook-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gele-card:hover .gele-media img,
+.ritual-card:hover .ritual-media img,
+.lookbook-card:hover .lookbook-thumb img {
+  transform: scale(1.04);
+}
+
+.gele-caption, .ritual-caption {
+  padding: 12px 14px;
+  text-align: center;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-bordeaux);
+  border-top: 1px solid rgba(104, 26, 42, 0.08);
+}
+
+.lookbook-details {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lookbook-title {
+  font-size: 0.96rem;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  color: var(--c-ink);
+  line-height: 1.25;
+}
+
+/* ── 5. LECTEURS VIDÉO HAUTE TENUE ── */
+.video-box {
+  background: var(--c-white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--c-gold-border);
+  box-shadow: var(--shadow-subtle);
+  transition: var(--transition-smooth);
+}
+
+.video-box:hover {
+  box-shadow: var(--shadow-card);
+}
+
+.video-box video {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  background: #000;
+  object-fit: cover;
+}
+
+.video-caption-box {
+  padding: 16px;
+}
+
+.video-caption-box strong {
+  display: block;
+  font-size: 1rem;
+  font-family: var(--font-serif);
+  color: var(--c-ink);
+  margin-bottom: 4px;
+}
+
+.video-caption-box p {
+  font-size: 0.82rem;
+  color: var(--c-text-muted);
+  line-height: 1.5;
+}
+
+/* ── 6. FORMULAIRES & CHAMPS DE CONCIERGERIE ── */
+.concierge-box, .wedding-inquiry-box, .academy-form-card {
+  background: var(--c-white);
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--c-gold);
+  box-shadow: var(--shadow-card);
+  padding: 40px 24px;
+}
+
+@media (min-width: 768px) {
+  .concierge-box, .wedding-inquiry-box, .academy-form-card {
+    padding: 52px 44px;
+  }
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+@media (min-width: 640px) {
+  .form-row { grid-template-columns: 1fr 1fr; }
+}
+
+.custom-field, .custom-input {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--c-gold-border);
+  background: var(--c-blush-soft);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--c-ink);
+  margin-top: 6px;
+  transition: var(--transition-fast);
+}
+
+.custom-field:focus, .custom-input:focus {
+  outline: none;
+  border-color: var(--c-gold);
+  background: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.18);
+}
+
+/* ── 7. FILTRES LOOKBOOK & ORNEMENTS ── */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 32px 0 44px;
+}
+
+.filter-pill {
+  padding: 10px 22px;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border: 1px solid var(--c-gold-border);
+  background: var(--c-white);
+  color: var(--c-text-muted);
+  transition: var(--transition-fast);
+  cursor: pointer;
+}
+
+.filter-pill.active, .filter-pill:hover {
+  background: var(--c-bordeaux);
+  color: var(--c-white);
+  border-color: var(--c-bordeaux);
+  box-shadow: 0 4px 14px rgba(104, 26, 42, 0.25);
+}
+
+.founder-tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.35rem;
+  color: var(--c-bordeaux);
+}
+
 .ornament-line {
   display: flex;
   align-items: center;
