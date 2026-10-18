@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mombèrèola Fashion | Institut de Beauté & Académie — Cotonou</title>
+  <meta name="description" content="Maison de beauté fondée par Latifath à Cotonou. Près de 10 ans d'expertise en maquillage mariée, cortèges, gélé couture, tresses et formation professionnelle d'État.">
+  <meta name="theme-color" content="#121011">
+
+  <!-- Favicons officiels -->
+  <link rel="icon" href="logo/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="logo/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="logo/favicon-192.png">
+  <link rel="apple-touch-icon" href="logo/apple-touch-icon.png">
+
+  <!-- Open Graph / Réseaux sociaux -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mombèrèola Fashion — Fondée par Latifath | Cotonou">
+  <meta property="og:description" content="Révéler la beauté, transmettre un métier. Près de dix ans d'expertise au service de la femme béninoise.">
+  <meta property="og:image" content="images/og-image-mombereola-fashion.jpg">
+  <meta property="og:locale" content="fr_BJ">
+
+  <!-- Typographies Google Fonts (Performance sans blocage) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Feuilles de style modulaires du Jalon 1 -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset-base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+
+  <!-- Styles éditoriaux spécifiques à la Page d'Accueil (Arches & Grille Portfolio) -->
+  <style>
+    /* ── L'Arche Romane Couture (Signature visuelle du Portfolio) ── */
+    .arch-frame {
+      position: relative;
+      border-radius: 200px 200px var(--radius-md) var(--radius-md);
+      overflow: hidden;
+      border: 1.5px solid var(--c-gold);
+      box-shadow: var(--shadow-card);
+      background-color: var(--c-blush-soft);
+      padding: 6px;
+    }
+
+    .arch-frame-inner {
+      border-radius: 194px 194px calc(var(--radius-md) - 4px) calc(var(--radius-md) - 4px);
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+    }
+
+    .arch-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s var(--ease-couture);
+    }
+
+    .arch-frame:hover img {
+      transform: scale(1.03);
+    }
+
+    /* ── Hero Section ── */
+    .hero-editorial {
+      padding: 40px 0 70px;
+    }
+
+    .hero-editorial-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    @media (min-width: 992px) {
+      .hero-editorial-grid {
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 60px;
+        padding: 30px 0;
+      }
+    }
+
+    .founder-tagline {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.35rem;
+      color: var(--c-bordeaux);
+      margin-bottom: 8px;
+    }
+
+    .hero-stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 36px;
+      padding-top: 24px;
+      border-top: 1px solid var(--c-gold-border);
+    }
+
+    .stat-item strong {
+      font-family: var(--font-serif);
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+      color: var(--c-ink);
+      display: block;
+      line-height: 1.1;
+    }
+
+    .stat-item span {
+      font-size: 0.76rem;
+      color: var(--c-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Les 6 Domaines d'Expertise (Page 3 du Portfolio) ── */
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    @media (min-width: 640px) {
+      .expertise-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 1024px) {
+      .expertise-grid { grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    }
+
+    .expertise-card {
+      background: var(--c-white);
+      border-radius: var(--radius-md);
+      padding: 36px 28px;
+      border: 1px solid var(--c-gold-border);
+      position: relative;
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .expertise-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card);
+      border-color: var(--c-gold);
+    }
+
+    .expertise-number {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      color: var(--c-gold);
+      line-height: 1;
+      margin-bottom: 16px;
+      font-weight: 400;
+    }
+
+    .expertise-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+      color: var(--c-ink);
+    }
+
+    .expertise-card p {
+      font-size: 0.9rem;
+      color: var(--c-text-muted);
+      line-height: 1.6;
+    }
+
+    /* ── Section Mariage & Toute la Maison (Page 4 du Portfolio) ── */
+    .wedding-focus {
+      background: linear-gradient(180deg, var(--c-blush-soft) 0%, #FFFFFF 100%);
+      padding: 90px 0;
+      position: relative;
+    }
+
+    .wedding-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    @media (min-width: 992px) {
+      .wedding-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 70px;
+      }
+    }
+
+    .wedding-checklist {
+      list-style: none;
+      margin: 28px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .wedding-checklist li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.98rem;
+      color: var(--c-ink);
+      font-weight: 500;
+    }
+
+    .wedding-checklist li::before {
+      content: "🌸";
+      font-size: 1rem;
+    }
+
+    .wedding-gallery-duo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .wedding-gallery-duo .caption {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--c-bordeaux);
+      margin-top: 8px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    /* ── Section Savoir-Faire Étape par Étape (Page 6 du Portfolio) ── */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    @media (min-width: 768px) {
+      .steps-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .step-card {
+      background: var(--c-white);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--c-gold-border);
+      text-align: center;
+    }
+
+    .step-media {
+      height: 280px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .step-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .step-body {
+      padding: 20px;
+    }
+
+    .step-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--c-gold);
+      color: var(--c-white);
+      font-weight: 700;
+      font-size: 0.85rem;
+      margin-bottom: 8px;
+    }
+
+    .step-title {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--c-bordeaux);
+      font-weight: 700;
+    }
+
+    /* ── Section Académie & Bourse d'État (Page 8 du Portfolio) ── */
+    .academy-banner {
+      background: linear-gradient(135deg, #1C1215 0%, #38141F 100%);
+      color: var(--c-white);
+      border-radius: var(--radius-lg);
+      padding: 48px 24px;
+      border: 1px solid var(--c-gold);
+      box-shadow: var(--shadow-floating);
+      margin: 60px 0;
+    }
+
+    @media (min-width: 992px) {
+      .academy-banner {
+        padding: 64px 56px;
+      }
+    }
+
+    .academy-flex {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    @media (min-width: 992px) {
+      .academy-flex {
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 60px;
+      }
+    }
+
+    .support-card {
+      background: rgba(216, 27, 96, 0.12);
+      border: 1px solid rgba(216, 27, 96, 0.35);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      margin-top: 32px;
+    }
+
+    /* ── Galerie de Gélés "Élégance en Couleurs" (Page 5 du Portfolio) ── */
+    .gele-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 36px;
+    }
+
+    @media (min-width: 768px) {
+      .gele-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    }
+
+    .gele-card {
+      background: var(--c-white);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      border: 1px solid var(--c-gold-border);
+      box-shadow: var(--shadow-subtle);
+      transition: var(--transition-smooth);
+    }
+
+    .gele-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card);
+    }
+
+    .gele-media {
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+    }
+
+    .gele-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gele-card:hover .gele-media img {
+      transform: scale(1.04);
+    }
+
+    .gele-caption {
+      padding: 12px 14px;
+      text-align: center;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--c-bordeaux);
+      border-top: 1px solid rgba(104, 26, 42, 0.08);
+    }
+  </style>
+
+  <!-- Balisage SEO Local JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BeautySalon",
+    "name": "Mombèrèola Fashion",
+    "founder": {
+      "@type": "Person",
+      "name": "Latifath"
+    },
+    "description": "Institut de beauté et de haute coiffure fondé par Latifath à Cotonou. Maquillage mariée et cérémonies, nouage de gélé, tresses d'art, soins dermatologiques et académie diplômante d'État.",
+    "telephone": "+2290196149051",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Cotonou",
+      "addressCountry": "BJ"
+    },
+    "priceRange": "$$"
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- ========================================================================
+       1. EN-TÊTE & LOGO DE LUXE
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="#accueil" class="brand-identity" aria-label="Mombèrèola Fashion Accueil">
+        <img src="logo/logo-mombereola-fashion.png" alt="Logo de l'institut de beauté Mombèrèola Fashion" width="50" height="50">
+        <div class="brand-text">
+          <span class="brand-title">Mombèrèola Fashion</span>
+          <p class="brand-sub">Par Latifath · Cotonou</p>
+        </div>
+      </a>
+
+      <!-- Menu Ordinateur -->
+      <nav class="desktop-nav" aria-label="Menu principal">
+        <a href="#apropos" class="nav-link">La Maison</a>
+        <a href="#expertises" class="nav-link">Expertises</a>
+        <a href="#mariage" class="nav-link">Mariage & Cortège</a>
+        <a href="#savoir-faire" class="nav-link">Savoir-Faire</a>
+        <a href="#academie" class="nav-link">Académie</a>
+        <a href="#couleurs" class="nav-link">Créations</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="https://wa.me/2290196149051?text=Bonjour%20Madame%20Latifath%2C%20je%20souhaite%20prendre%20un%20rendez-vous%20%C3%A0%20l%27institut" 
+           target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="padding: 10px 22px; font-size: 0.8rem;">
+          Réserver via WhatsApp
+        </a>
+      </nav>
+
+      <!-- Bouton Menu Mobile -->
+      <button class="burger-btn" id="burgerToggle" aria-label="Ouvrir le menu de navigation">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="accueil">
+
+    <!-- ========================================================================
+       2. HERO SECTION — LATIFATH & L'INSTITUT (Pages 1 & 2 du Portfolio)
+       ======================================================================== -->
+    <section class="hero-editorial" id="apropos">
+      <div class="container hero-editorial-grid">
+        <div>
+          <span class="badge badge-gold" style="margin-bottom: 16px;">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z"/></svg>
+            Institut de Beauté d'Exception · Cotonou
+          </span>
+
+          <p class="founder-tagline">Révéler la beauté, transmettre un métier.</p>
+          
+          <h1 style="margin-bottom: 20px;">
+            L'Élégance au service de <em>chaque femme</em>.
+          </h1>
+
+          <p style="margin-bottom: 24px; font-size: 1.05rem;">
+            Fondatrice de l'institut Mombèrèola Fashion, <strong>Latifath</strong> met son talent au service de la beauté depuis près de dix ans. Maquillage, coiffure, soins du visage, manucure et pédicure : chaque prestation est pensée pour sublimer la personnalité de celle qui prend place dans son fauteuil.
+          </p>
+
+          <div style="display:flex; flex-wrap:wrap; gap:14px;">
+            <a href="https://wa.me/2290196149051?text=Bonjour%20Madame%20Latifath%2C%20je%20souhaite%20r%C3%A9server%20une%20mise%20en%20beaut%C3%A9" 
+               target="_blank" rel="noopener noreferrer" class="btn btn-gold">
+              Prendre Rendez-vous
+            </a>
+            <a href="#expertises" class="btn btn-outline-gold">
+              Découvrir nos Soins
+            </a>
+          </div>
+
+          <!-- Chiffres Clés Authentiques du Portfolio -->
+          <div class="hero-stats-row">
+            <div class="stat-item">
+              <strong>Près de 10 ans</strong>
+              <span>D'expérience</span>
+            </div>
+            <div class="stat-item">
+              <strong>Mariages</strong>
+              <span>Toute la famille</span>
+            </div>
+            <div class="stat-item">
+              <strong>Bourses d'État</strong>
+              <span>Jeunes filles</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Portrait de Latifath en Arche Romane -->
+        <div style="max-width: 440px; margin: 0 auto; width: 100%;">
+          <div class="arch-frame" style="aspect-ratio: 4 / 5.6;">
+            <div class="arch-frame-inner">
+              <img src="images/portrait-robe-satin-lilas-studio-mombereola-fashion.webp" 
+                   alt="Latifath, fondatrice de l'institut de beauté Mombèrèola Fashion en robe lilas" 
+                   width="857" height="1200" fetchpriority="high">
+            </div>
+          </div>
+          <div style="text-align: center; margin-top: 14px;">
+            <p style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; color: var(--c-ink); margin-bottom: 2px;">
+              Latifath
+            </p>
+            <p style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--c-bordeaux); font-weight: 600;">
+              Fondatrice & Maître Praticienne
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ornament-line"><span class="ornament-dot"></span></div>
+
+    <!-- ========================================================================
+       3. LES 6 DOMAINES D'EXPERTISE (Page 3 du Portfolio)
+       ======================================================================== -->
+    <section class="section-py" id="expertises" style="padding-top: 40px;">
+      <div class="container">
+        <div style="text-align: center; max-width: 640px; margin: 0 auto;">
+          <span class="badge badge-bordeaux">Expertise de Pointe</span>
+          <h2 style="margin-top: 12px; margin-bottom: 12px;">Un Savoir-Faire Complet de la Beauté</h2>
+          <p>Une maîtrise totale des rituels esthétiques traditionnels et contemporains au cœur de Cotonou.</p>
+        </div>
+
+        <div class="expertise-grid">
+          <!-- 01 Maquillage -->
+          <article class="expertise-card">
+            <div>
+              <span class="expertise-number">01</span>
+              <h3>Maquillage</h3>
+              <p>Maquillage de jour, de soirée et de cérémonie, adapté à chaque teint, à chaque tenue et à chaque occasion festive.</p>
+            </div>
+            <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--c-gold-border);">
+              <a href="https://wa.me/2290196149051?text=Bonjour%20Madame%20Latifath%2C%20je%20souhaite%20r%C3%A9server%20une%20s%C3%A9ance%20Maquillage" 
+                 target="_blank" rel="noopener noreferrer" style="font-size: 0.8rem; font-weight: 700; color: var(--c-bordeaux); text-transform: uppercase; letter-spacing: 0.05em;">
+                Réserver une séance &rarr;
+              </a>
+            </div>
+          </article>
+
+          <!-- 02 Mariage & Événements -->
+          <article class="expertise-card" style="background: var(--c-blush-soft); border-color: var(--c-gold);">
+            <div>
+              <span class="expertise-number">02</span>
+              <h3>Mariage & Événements</h3>
+              <p>La mariée, la famille, la maison : tout un cortège maquillé avec la même exigence, le jour où tout doit être parfait.</p>
+            </div>
+            <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--c-gold-border);">
+              <a href="https://wa.me/2290196149051?text=Bonjour%20Madame%20Latifath%2C%20je%20souhaite%20des%20informations%20pour%20un%20Mariage%20et%20Cort%C3%A8ge" 
+                 target="_blank" rel="noopener noreferrer" style="font-size: 0.8rem; font-weight: 700; color: var(--c-bordeaux); text-transform: uppercase; letter-spacing: 0.05em;">
+                Formule Cortège &rarr;
+              </a>
+            </div>
+          </article>
+
+          <!-- 03 Coiffure & Tresses -->
+          <article class="expertise-card">
+            <div>
+              <span class="expertise-number">03</span>
+              <h3>Coiffure & Tresses</h3>
+              <p>Tresses d'art, coiffures de cérémonie et mise en forme des foulards et gélés pour une allure structurée et majestueuse.</p>
+            </div>
+            <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--c-gold-border);">
+              <a href="https://wa.me/2290196149051?text=Bonjour%20Madame%20Latifath%2C%20je%20souhaite%20r%C3%A9server%20pour%20Coiffure%20et%20Tresses" 
+                 target="_blank" rel="noopener noreferrer" style="font-size: 0.8rem; font-weight: 700; color: var(--c-bordeaux); text-transform: uppercase; letter-spacing: 0.05em;">
+                Choisir une coiffure &rarr;
+              </a>
+            </div>
+          </article>
+
+          <!-- 04 Manucure & Pédicure -->
+          <article class="expertise-card">
+            <div>
+              <span class="expertise-number">04</span>
+              <h3>Manucure & Pédicure</h3>
+              <p>Soins complets des mains et des pieds, avec des finitions soignées pour une élégance raffinée jusqu'au bout des ongles.</p>
+            </div>
+            <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--c-gold-border);">
+              <a href="https://wa.me/2290196149051?text=Bonjour%20Madame%20Latifath%2C%20je%20souhaite%20r%C3%A9server%20une%20Manucure%20P%C3%A9dicure" 
+                 target="_blank" rel="noopener noreferrer" style="font-size: 0.8rem; font-weight: 700; color: var(--c-bordeaux); text-transform: uppercase; letter-spacing: 0.05em;">
+                Prendre soin de soi &rarr;
+              </a>
+            </div>
+          </article>
+
+          <!-- 05 Soins du Visage -->
+          <article class="expertise-card">
+            <div>
+              <span class="expertise-number">05</span>
+              <h3>Soins du Visage</h3>
+              <p>Soins en institut en cabine privée : masque, gommage et massage professionnel pour un teint reposé, détoxifié et lumineux.</p>
+            </div>
+            <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--c-gold-border);">
+              <a href="https://wa.me/2290196149051?text=Bonjour%20Madame%20Latifath%2C%20je%20souhaite%20un%20Soin%20du%20Visage" 
+                 target="_blank" rel="noopener noreferrer" style="font-size: 0.8rem; font-weight: 700; color: var(--c-bordeaux); text-transform: uppercase; letter-spacing: 0.05em;">
+                Consulter les rituels &rarr;
+              </a>
+            </div>
+          </article>
+
+          <!-- 06 Formation Professionnelle -->
+          <article class="expertise-card">
+            <div>
+              <span class="expertise-number">06</span>
+              <h3>Formation d'État</h3>
+              <p>Apprentissage rigoureux en esthétique générale, coiffure, tresse, maquillage et nouage de foulards donnant droit à un diplôme officiel.</p>
+            </div>
+            <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--c-gold-border);">
+              <a href="#academie" style="font-size: 0.8rem; font-weight: 700; color: var(--c-bordeaux); text-transform: uppercase; letter-spacing: 0.05em;">
+                Voir les Bourses d'études &rarr;
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+       4. MARIAGE & TOUTE LA MAISON (Page 4 du Portfolio)
+       ======================================================================== -->
+    <section class="wedding-focus" id="mariage">
+      <div class="container wedding-grid">
+        <!-- Visuel Mariée en Arche -->
+        <div style="max-width: 460px; margin: 0 auto; width: 100%;">
+          <div class="arch-frame" style="aspect-ratio: 4 / 5.8;">
+            <div class="arch-frame-inner">
+              <img src="images/maquillage-mariee-voile-robe-de-mariage-mombereola-fashion.webp" 
+                   alt="Maquillage de mariée avec voile et robe de mariage par Latifath" 
+                   width="607" height="1080" loading="lazy">
+            </div>
+          </div>
+          
+          <div class="wedding-gallery-duo">
+            <div>
+              <div class="card-luxury" style="aspect-ratio: 1; overflow: hidden;">
+                <img src="images/maquillage-naturel-bonnet-blanc-dentelle-mombereola-fashion.webp" 
+                     alt="Maquillage de cérémonie avec bonnet blanc et dentelle" width="607" height="1080" loading="lazy" style="height:100%; object-fit:cover;">
+              </div>
+              <p class="caption">Maquillage de Cérémonie</p>
+            </div>
+            <div>
+              <div class="card-luxury" style="aspect-ratio: 1; overflow: hidden;">
+                <img src="images/maquillage-cliente-foulard-moutarde-preparation-02-mombereola-fashion.webp" 
+                     alt="Préparation d'une invitée en foulard moutarde par Latifath" width="608" height="1080" loading="lazy" style="height:100%; object-fit:cover;">
+              </div>
+              <p class="caption">Préparation d'une Invitée</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contenu Éditorial Mariage -->
+        <div>
+          <span class="badge badge-magenta">Célébrations & Rituels</span>
+          <h2 style="margin-top: 14px; margin-bottom: 20px;">
+            Le grand jour,<br><em>chaque détail compte</em>.
+          </h2>
+
+          <p style="margin-bottom: 18px; font-size: 1.05rem;">
+            Le mariage est au cœur de notre savoir-faire. <strong>Latifath maquille la mariée, puis toute la famille ou toute la maison</strong> : teint, regard et tenue se répondent pour que chaque femme rayonne le jour J.
+          </p>
+
+          <p style="margin-bottom: 24px;">
+            Elle intervient également lors de cérémonies et d'événements de toute nature (mariage coutumier, dot, communion, baptême), avec la même rigueur et le même souci d'élégance absolue.
+          </p>
+
+          <ul class="wedding-checklist">
+            <li>La mariée (civil, religieux, traditionnel)</li>
+            <li>La famille, les mères et les demoiselles d'honneur</li>
+            <li>Cérémonies, dots et réceptions mondaines</li>
+          </ul>
+
+          <div style="margin-top: 32px;">
+            <a href="https://wa.me/2290196149051?text=Bonjour%20Madame%20Latifath%2C%20je%20souhaite%20r%C3%A9server%20la%20prestation%20Mari%C3%A9e%20et%20Cort%C3%A8ge%20de%20Famille" 
+               target="_blank" rel="noopener noreferrer" class="btn btn-gold">
+              Planifier Mon Mariage avec Latifath
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+       5. SAVOIR-FAIRE : « CHAQUE GESTE EST UNE SIGNATURE » (Page 6 & 7)
+       ======================================================================== -->
+    <section class="section-py" id="savoir-faire">
+      <div class="container">
+        <div style="text-align: center; max-width: 680px; margin: 0 auto;">
+          <span class="badge badge-gold">Précision du Geste</span>
+          <h2 style="margin-top: 12px; margin-bottom: 14px;">De la Préparation au Résultat</h2>
+          <p class="founder-tagline" style="font-size: 1.5rem; margin-bottom: 8px;">Chaque geste est une signature.</p>
+          <p>
+            Du regard aux lèvres, de la coiffure à la finition, chaque geste est maîtrisé. Le résultat : un teint éclatant, un regard travaillé et un rendu qui tient magnifiquement devant l'objectif comme dans la vie.
+          </p>
+        </div>
+
+        <!-- Étapes 1, 2, 3 -->
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-media">
+              <img src="images/maquillage-yeux-fard-violet-application-01-mombereola-fashion.webp" 
+                   alt="Étape 1 : Le regard, application du fard à paupières" width="607" height="1080" loading="lazy">
+            </div>
+            <div class="step-body">
+              <span class="step-badge">1</span>
+              <p class="step-title">Le Regard</p>
+              <p style="font-size: 0.82rem; margin-top: 6px;">Dégradé chromatique précis et ligne d'eye-liner sculptée.</p>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-media">
+              <img src="images/maquillage-levres-application-rouge-a-levres-mombereola-fashion.webp" 
+                   alt="Étape 2 : Les lèvres, application minutieuse du rouge à lèvres" width="607" height="1080" loading="lazy">
+            </div>
+            <div class="step-body">
+              <span class="step-badge">2</span>
+              <p class="step-title">Les Lèvres</p>
+              <p style="font-size: 0.82rem; margin-top: 6px;">Contour précis et textures satinées pour un galbe parfait.</p>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-media">
+              <img src="images/maquillage-teint-eclatant-resultat-final-robe-corail-mombereola-fashion.webp" 
+                   alt="Étape 3 : La coiffure chignon et le résultat final éclatant" width="607" height="1080" loading="lazy">
+            </div>
+            <div class="step-body">
+              <span class="step-badge">3</span>
+              <p class="step-title">La Coiffure & Finition</p>
+              <p style="font-size: 0.82rem; margin-top: 6px;">Chignon couture et spray fixateur pour une tenue 24h.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Encadré Cabine Soins du Visage & Tresses d'art (Page 7) -->
+        <div style="margin-top: 60px; background: var(--c-white); border-radius: var(--radius-md); padding: 36px 28px; border: 1px solid var(--c-gold-border);">
+          <div style="display:grid; grid-template-columns: 1fr; gap: 32px; align-items:center;">
+            <div>
+              <span class="badge badge-bordeaux">Cabine & Bien-Être</span>
+              <h3 style="font-size: 1.6rem; margin: 12px 0;">Soins du Visage Dermato-Esthétiques & Tresses Nettes</h3>
+              <p style="margin-bottom: 16px;">
+                En institut, masque réparateur, gommage doux et massage sous vapeur ozonée redonnent au visage repos et éclat, dans le respect strict de la physiologie de votre peau. Les tresses sont réalisées avec une tension millimétrée, sans douleur.
+              </p>
+              <p style="font-size: 0.84rem; color: var(--c-bordeaux); font-weight: 600;">
+                ✓ Hygiène hospitalière : blouse blanche, charlotte, gants stériles et masque chirurgical pour chaque soin.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+       6. L'ACADÉMIE & LA BOURSE DENISE HOUNMENOU (Page 8 du Portfolio)
+       ======================================================================== -->
+    <section class="container" id="academie">
+      <div class="academy-banner">
+        <div class="academy-flex">
+          <div>
+            <span class="badge" style="background: rgba(212, 175, 55, 0.2); color: var(--c-gold); border: 1px solid var(--c-gold);">
+              Formation & Engagement Citoyen
+            </span>
+            <h2 style="color: var(--c-white); margin-top: 14px; margin-bottom: 18px;">
+              Transmettre, c'est offrir un avenir.
+            </h2>
+            <p style="color: rgba(255, 255, 255, 0.85); margin-bottom: 20px;">
+              L'institut forme les futures professionnelles de la beauté et soutient des jeunes filles défavorisées grâce à des <strong>bourses de formation d'excellence</strong> : <strong>3 ans d'apprentissage</strong> menant directement à un <strong>Diplôme d'État officiel</strong>.
+            </p>
+
+            <p style="font-size: 0.9rem; color: var(--c-gold); font-weight: 600; margin-bottom: 14px;">
+              Filières officielles enseignées :
+            </p>
+            <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom: 28px;">
+              <span class="badge badge-bordeaux" style="background:rgba(255,255,255,0.1); color:#FFF; border-color:rgba(255,255,255,0.2);">Esthétique générale</span>
+              <span class="badge badge-bordeaux" style="background:rgba(255,255,255,0.1); color:#FFF; border-color:rgba(255,255,255,0.2);">Coiffure</span>
+              <span class="badge badge-bordeaux" style="background:rgba(255,255,255,0.1); color:#FFF; border-color:rgba(255,255,255,0.2);">Tresses d'art</span>
+              <span class="badge badge-bordeaux" style="background:rgba(255,255,255,0.1); color:#FFF; border-color:rgba(255,255,255,0.2);">Maquillage pro</span>
+              <span class="badge badge-bordeaux" style="background:rgba(255,255,255,0.1); color:#FFF; border-color:rgba(255,255,255,0.2);">Nouage de foulards</span>
+            </div>
+
+            <div class="support-card">
+              <p style="font-family: var(--font-serif); font-size: 1.35rem; font-style: italic; color: #FFFFFF; margin-bottom: 6px;">
+                Soutenir ce projet d'émancipation ?
+              </p>
+              <p style="font-size: 0.86rem; color: rgba(255,255,255,0.8); margin-bottom: 14px;">
+                Partenaire, institution ou personne de bonne volonté : rejoignez la démarche de l'Honorable Denise Hounmenou et de Latifath pour offrir des bourses à de nouvelles jeunes filles.
+              </p>
+              <a href="https://wa.me/2290196149051?text=Bonjour%20Madame%20Latifath%2C%20je%20souhaite%20des%20informations%20concernant%20les%20Bourses%20de%20Formation" 
+                 target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="font-size: 0.82rem;">
+                Rejoindre la démarche / Candidater
+              </a>
+            </div>
+          </div>
+
+          <!-- Affiche Officielle de la Bourse -->
+          <div style="max-width: 380px; margin: 0 auto; width: 100%;">
+            <div class="card-luxury" style="border: 2px solid var(--c-gold); box-shadow: 0 16px 40px rgba(0,0,0,0.5);">
+              <img src="images/flyer-bourse-formation-esthetique-coiffure-maquillage-mombereola-fashion.webp" 
+                   alt="Affiche officielle de la bourse de formation offerte par l'Honorable Denise Hounmenou" 
+                   width="720" height="1080" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+       7. RÉALISATIONS : « ÉLÉGANCE EN COULEURS » (Page 5 du Portfolio)
+       ======================================================================== -->
+    <section class="section-py" id="couleurs">
+      <div class="container">
+        <div style="text-align: center; max-width: 640px; margin: 0 auto;">
+          <span class="badge badge-gold">Portfolio Haute Coiffure</span>
+          <h2 style="margin-top: 12px; margin-bottom: 10px;">Élégance en Couleurs</h2>
+          <p>L'harmonie sacrée entre les étoffes, les gélés architecturaux et la mise en valeur des teints africains.</p>
+        </div>
+
+        <div class="gele-grid">
+          <!-- 1. Foulard Jaune & Tenue Dorée -->
+          <div class="gele-card">
+            <div class="gele-media">
+              <img src="images/maquillage-glamour-foulard-jaune-tenue-doree-mombereola-fashion.webp" 
+                   alt="Foulard jaune et tenue dorée brodée" width="606" height="1080" loading="lazy">
+            </div>
+            <p class="gele-caption">Foulard Jaune & Tenue Dorée</p>
+          </div>
+
+          <!-- 2. Gélé Menthe & Broderies Fleuries -->
+          <div class="gele-card">
+            <div class="gele-media">
+              <img src="images/maquillage-soiree-gele-vert-d-eau-tenue-fleurs-mombereola-fashion.webp" 
+                   alt="Gélé menthe et broderies fleuries" width="606" height="1080" loading="lazy">
+            </div>
+            <p class="gele-caption">Gélé Menthe & Broderies Fleuries</p>
+          </div>
+
+          <!-- 3. Gélé Noir & Sequins Verts -->
+          <div class="gele-card">
+            <div class="gele-media">
+              <img src="images/maquillage-glamour-gele-noir-tenue-verte-mombereola-fashion.webp" 
+                   alt="Gélé noir et tenue verte à sequins" width="606" height="1080" loading="lazy">
+            </div>
+            <p class="gele-caption">Gélé Noir & Sequins Verts</p>
+          </div>
+
+          <!-- 4. Gélé Rose & Tenue Brodée -->
+          <div class="gele-card">
+            <div class="gele-media">
+              <img src="images/maquillage-ceremonie-gele-rose-tenue-brodee-mombereola-fashion.webp" 
+                   alt="Gélé rose et tenue brodée" width="606" height="1080" loading="lazy">
+            </div>
+            <p class="gele-caption">Gélé Rose & Tenue Brodée</p>
+          </div>
+
+          <!-- 5. Gélé Vert Émeraude -->
+          <div class="gele-card">
+            <div class="gele-media">
+              <img src="images/maquillage-fete-gele-vert-boubou-jaune-mombereola-fashion.webp" 
+                   alt="Gélé vert émeraude et boubou jaune" width="607" height="1080" loading="lazy">
+            </div>
+            <p class="gele-caption">Gélé Vert Émeraude</p>
+          </div>
+
+          <!-- 6. Chignon & Robe Corail -->
+          <div class="gele-card">
+            <div class="gele-media">
+              <img src="images/portrait-maquillage-coiffure-chignon-robe-corail-mombereola-fashion.webp" 
+                   alt="Coiffure chignon d'apparat et robe corail" width="795" height="1200" loading="lazy">
+            </div>
+            <p class="gele-caption">Chignon & Robe Corail</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+       8. CONTACT & COLLABORONS (Page 9 du Portfolio)
+       ======================================================================== -->
+    <section class="section-py" id="contact" style="background-color: var(--c-white); border-top: 1px solid var(--c-gold-border);">
+      <div class="container" style="max-width: 840px; text-align: center;">
+        <span class="badge badge-magenta">Rencontre & Loge Privée</span>
+        
+        <h2 style="font-size: clamp(2.4rem, 5vw, 3.5rem); margin-top: 14px; margin-bottom: 12px;">
+          Collaborons
+        </h2>
+        
+        <p class="founder-tagline" style="font-size: 1.35rem; margin-bottom: 36px;">
+          Un projet, un événement, un partenariat ? Latifath se tient à votre entière disposition.
+        </p>
+
+        <div style="display:grid; grid-template-columns: 1fr; gap: 20px; margin-bottom: 36px;">
+          <!-- Bouton Téléphone / WhatsApp Principal -->
+          <a href="https://wa.me/2290196149051?text=Bonjour%20Madame%20Latifath%2C%20je%20vous%20contacte%20depuis%20le%20site%20officiel" 
+             target="_blank" rel="noopener noreferrer" 
+             class="card-luxury" style="padding: 24px; display:flex; flex-direction:column; align-items:center; gap:6px; border-color: var(--c-gold);">
+            <span style="font-size: 0.74rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c-bordeaux);">
+              Téléphone · WhatsApp Direct
+            </span>
+            <strong style="font-size: 1.6rem; color: var(--c-ink); font-family: var(--font-serif);">
+              +229 01 96 14 90 51
+            </strong>
+          </a>
+
+          <!-- Réseaux Sociaux -->
+          <div class="card-luxury" style="padding: 24px;">
+            <span style="font-size: 0.74rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c-text-muted);">
+              Instagram · Facebook · TikTok
+            </span>
+            <p style="font-size: 1.35rem; color: var(--c-ink); font-family: var(--font-serif); font-weight: 600; margin-top: 4px;">
+              Mombèrèola Fashion
+            </p>
+          </div>
+        </div>
+
+        <p style="font-size: 0.95rem; color: var(--c-text-muted);">
+          📍 <strong>Cotonou, Bénin</strong> · Institut de Beauté & Couture
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       9. PIED DE PAGE HAUTE MAISON
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4 style="font-family: var(--font-serif); letter-spacing: 0.04em;">Mombèrèola Fashion</h4>
+          <p style="margin-bottom: 12px;">
+            Maison de beauté et d'apprentissage professionnel fondée par Latifath. Près de 10 ans d'amour du travail bien fait à Cotonou, Bénin.
+          </p>
+          <p class="founder-tagline" style="color: var(--c-gold); font-size: 1.1rem;">
+            Révéler la beauté, transmettre un métier.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4 style="font-size: 1.15rem;">Navigation</h4>
+          <p><a href="#apropos">La Maison & Latifath</a></p>
+          <p><a href="#expertises">Nos 6 Domaines de Soin</a></p>
+          <p><a href="#mariage">Mariage & Cortège</a></p>
+          <p><a href="#academie">Académie & Bourse d'État</a></p>
+          <p><a href="#couleurs">Galerie des Gélés</a></p>
+        </div>
+
+        <div class="footer-col">
+          <h4 style="font-size: 1.15rem;">Horaires d'Accueil</h4>
+          <p>Lundi au Samedi : 08h00 – 19h30</p>
+          <p>Dimanche : Réservé aux Mariées & Cortèges sur RDV</p>
+          <p style="margin-top: 10px; color: var(--c-gold);">Cotonou, République du Bénin</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="yearPlaceholder"></span> Mombèrèola Fashion · Institut de Beauté. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       10. BARRE MOBILE FLOTTANTE (CONVERSION 4G WHATSAPP)
+       ======================================================================== -->
+  <aside class="mobile-concierge-bar" aria-label="Action rapide mobile">
+    <a href="tel:+2290196149051" class="mobile-call-action" aria-label="Appeler Latifath au salon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    </a>
+    <a href="https://wa.me/2290196149051?text=Bonjour%20Madame%20Latifath%2C%20je%20souhaite%20r%C3%A9server%20un%20rendez-vous%20%C3%A0%20l%27institut" 
+       target="_blank" rel="noopener noreferrer" class="mobile-whatsapp-action">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.14c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.12 8.12 0 0 1-1.25-4.37c0-4.49 3.65-8.14 8.14-8.14 2.18 0 4.22.85 5.76 2.39a8.08 8.08 0 0 1 2.38 5.75c0 4.49-3.65 8.14-8.14 8.14z"/></svg>
+      Réserver avec Latifath
+    </a>
+  </aside>
+
+  <!-- Script Vanilla Ultra-Léger (Sans Dépendance) -->
+  <script>
+    // Année dynamique
+    document.getElementById('yearPlaceholder').textContent = new Date().getFullYear();
+
+    // Menu Mobile Simple & Fluide
+    const burgerToggle = document.getElementById('burgerToggle');
+    const desktopNav = document.querySelector('.desktop-nav');
+
+    burgerToggle.addEventListener('click', () => {
+      const isVisible = desktopNav.style.display === 'flex';
+      desktopNav.style.display = isVisible ? 'none' : 'flex';
+      desktopNav.style.flexDirection = 'column';
+      desktopNav.style.position = 'absolute';
+      desktopNav.style.top = 'var(--header-height)';
+      desktopNav.style.left = '0';
+      desktopNav.style.right = '0';
+      desktopNav.style.background = '#FFFFFF';
+      desktopNav.style.padding = '24px';
+      desktopNav.style.boxShadow = 'var(--shadow-floating)';
+      desktopNav.style.borderBottom = '1px solid var(--c-gold-border)';
+    });
+  </script>
+
+</body>
+</html>
