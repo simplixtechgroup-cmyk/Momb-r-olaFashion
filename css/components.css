@@ -1,0 +1,146 @@
+/* ==========================================================================
+   COMPOSANTS DE LUXE & INTERFACES DE CONVERSION
+   ========================================================================== */
+
+/* ── 1. BOUTONS COUTURE ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: var(--radius-full);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: var(--transition-fast);
+  will-change: transform;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* Bouton Or Miroir (Inspiré du double anneau) */
+.btn-gold {
+  background: linear-gradient(135deg, var(--c-gold) 0%, var(--c-gold-dark) 100%);
+  color: var(--c-white);
+  box-shadow: var(--shadow-gold);
+}
+
+.btn-gold:hover {
+  box-shadow: 0 10px 28px rgba(212, 175, 55, 0.42);
+  filter: brightness(1.05);
+}
+
+/* Bouton Noir Encre (Graphisme pur du regard) */
+.btn-ink {
+  background-color: var(--c-ink);
+  color: var(--c-white);
+}
+
+.btn-ink:hover {
+  background-color: var(--c-bordeaux);
+}
+
+/* Bouton Contour Or Ciselé */
+.btn-outline-gold {
+  background: transparent;
+  color: var(--c-ink);
+  border: 1px solid var(--c-gold);
+}
+
+.btn-outline-gold:hover {
+  background-color: var(--c-gold-light);
+  border-color: var(--c-gold-dark);
+}
+
+/* Bouton de Conversion Directe WhatsApp */
+.btn-whatsapp {
+  background-color: var(--c-wa-green);
+  color: var(--c-white);
+  box-shadow: 0 6px 20px var(--c-wa-glow);
+}
+
+.btn-whatsapp:hover {
+  background-color: var(--c-wa-green-hover);
+  box-shadow: 0 10px 26px rgba(37, 211, 102, 0.45);
+}
+
+/* ── 2. BADGES & DISTINCTIONS ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.badge-gold {
+  background-color: var(--c-gold-light);
+  color: var(--c-gold-dark);
+  border: 1px solid var(--c-gold-border);
+}
+
+.badge-bordeaux {
+  background-color: rgba(104, 26, 42, 0.08);
+  color: var(--c-bordeaux);
+  border: 1px solid rgba(104, 26, 42, 0.2);
+}
+
+.badge-magenta {
+  background-color: rgba(216, 27, 96, 0.08);
+  color: var(--c-magenta);
+  border: 1px solid rgba(216, 27, 96, 0.2);
+}
+
+/* ── 3. CARTES HAUTE MAISON ── */
+.card-luxury {
+  background-color: var(--c-white);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--c-gold-border);
+  overflow: hidden;
+  transition: var(--transition-smooth);
+  box-shadow: var(--shadow-subtle);
+}
+
+.card-luxury:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--c-gold);
+}
+
+/* ── 4. SÉPARATEURS HAUTE COUTURE ── */
+.ornament-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 32px auto;
+  max-width: 240px;
+}
+
+.ornament-line::before,
+.ornament-line::after {
+  content: "";
+  height: 1px;
+  flex-grow: 1;
+  background: linear-gradient(90deg, transparent, var(--c-gold), transparent);
+}
+
+.ornament-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--c-gold);
+}
