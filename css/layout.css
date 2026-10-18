@@ -1,14 +1,15 @@
 /* ==========================================================================
-   STRUCTURE GÉNÉRALE : EN-TÊTE, BARRE MOBILE & PIED DE PAGE
+   MOMBÈRÈOLA FASHION — ARCHITECTURE & GRILLES RESPONSIVES
+   Version consolidée & optimisée
    ========================================================================== */
 
-/* ── 1. EN-TÊTE FIXE ULTRA-LÉGER ── */
+/* ── 1. EN-TÊTE FIXE GLASSMORPHISM ── */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 100;
   height: var(--header-height);
-  background: rgba(253, 245, 246, 0.92);
+  background: rgba(253, 245, 246, 0.94);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--c-gold-border);
@@ -22,7 +23,6 @@
   justify-content: space-between;
 }
 
-/* Bloc Logo + Titre */
 .brand-identity {
   display: flex;
   align-items: center;
@@ -38,7 +38,7 @@
   box-shadow: 0 2px 8px rgba(212, 175, 55, 0.25);
 }
 
-.brand-text h1, .brand-text .brand-title {
+.brand-text .brand-title {
   font-family: var(--font-serif);
   font-size: 1.45rem;
   font-weight: 700;
@@ -56,7 +56,7 @@
   font-weight: 600;
 }
 
-/* Menu Ordinateur */
+/* Navigation Ordinateur */
 .desktop-nav {
   display: none;
 }
@@ -65,7 +65,7 @@
   .desktop-nav {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 28px;
   }
 
   .nav-link {
@@ -121,7 +121,226 @@
   transition: var(--transition-fast);
 }
 
-/* ── 2. BARRE MOBILE CONCIERGERIE WHATSAPP (CONVERSION MAXIMALE) ── */
+/* ── 2. LES GRANDES SECTIONS ÉDITORIALES ── */
+.section-py {
+  padding: 80px 0;
+}
+
+.hero-editorial, .hero-bridal, .hero-academy {
+  padding: 40px 0 70px;
+}
+
+.hero-bridal {
+  background: radial-gradient(circle at top right, rgba(248, 215, 222, 0.4) 0%, transparent 60%);
+}
+
+.hero-academy {
+  background: linear-gradient(180deg, rgba(104, 26, 42, 0.04) 0%, transparent 100%);
+}
+
+.wedding-focus {
+  background: linear-gradient(180deg, var(--c-blush-soft) 0%, #FFFFFF 100%);
+  padding: 90px 0;
+}
+
+.video-section {
+  background: linear-gradient(180deg, var(--c-blush-soft) 0%, #FFFFFF 100%);
+  padding: 80px 0;
+  margin-top: 60px;
+  border-top: 1px solid var(--c-gold-border);
+}
+
+.academy-banner, .bourse-spotlight {
+  background: linear-gradient(135deg, #1C1215 0%, #38141F 100%);
+  color: var(--c-white);
+  border-radius: var(--radius-lg);
+  padding: 48px 24px;
+  border: 1px solid var(--c-gold);
+  box-shadow: var(--shadow-floating);
+  margin: 60px 0;
+}
+
+@media (min-width: 992px) {
+  .academy-banner, .bourse-spotlight {
+    padding: 64px 56px;
+  }
+}
+
+.support-card {
+  background: rgba(216, 27, 96, 0.12);
+  border: 1px solid rgba(216, 27, 96, 0.35);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  margin-top: 32px;
+}
+
+/* ── 3. GRILLES D'AGENCEMENT UNIFIÉES ── */
+.hero-editorial-grid, .hero-bridal-grid, .hero-academy-grid, .bourse-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .hero-editorial-grid, .hero-bridal-grid, .hero-academy-grid, .bourse-layout {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 60px;
+  }
+}
+
+.hero-stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid var(--c-gold-border);
+}
+
+.stat-item strong {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  color: var(--c-ink);
+  display: block;
+  line-height: 1.1;
+}
+
+.stat-item span {
+  font-size: 0.76rem;
+  color: var(--c-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Grilles Prestations & Cursus */
+.expertise-grid, .curriculum-grid, .packages-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+@media (min-width: 640px) {
+  .expertise-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 768px) {
+  .curriculum-grid, .packages-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .expertise-grid { grid-template-columns: repeat(3, 1fr); gap: 28px; }
+}
+
+/* Grilles Galeries, Gélés & Lookbook */
+.gele-grid, .lookbook-grid, .rituals-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 36px;
+}
+
+@media (min-width: 768px) {
+  .gele-grid, .lookbook-grid, .rituals-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+}
+
+@media (min-width: 1024px) {
+  .lookbook-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* Grille Vidéos */
+.video-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 36px;
+}
+
+@media (min-width: 640px) {
+  .video-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .video-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Grille Contact */
+.contact-main-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  margin: 40px 0 70px;
+}
+
+@media (min-width: 992px) {
+  .contact-main-grid {
+    grid-template-columns: 1fr 1.25fr;
+    gap: 56px;
+  }
+}
+
+.contact-card-info {
+  background: var(--c-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--c-gold-border);
+  padding: 36px 28px;
+  box-shadow: var(--shadow-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.contact-method {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.contact-icon-wrapper {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--c-gold-light);
+  border: 1px solid var(--c-gold-border);
+  color: var(--c-bordeaux);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-method-text strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--c-ink);
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.contact-method-text span, .contact-method-text a {
+  font-size: 0.88rem;
+  color: var(--c-text-muted);
+}
+
+.social-banner {
+  background: var(--c-blush-soft);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  border: 1px solid var(--c-gold-border);
+  text-align: center;
+  margin-top: 10px;
+}
+
+.social-tag {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--c-ink);
+  margin-top: 4px;
+}
+
+/* ── 4. BARRE MOBILE CONCIERGERIE WHATSAPP AU POUCE ── */
 .mobile-concierge-bar {
   position: fixed;
   bottom: 0;
@@ -173,7 +392,7 @@
   box-shadow: 0 4px 16px var(--c-wa-glow);
 }
 
-/* ── 3. PIED DE PAGE INSTITUTIONNEL ── */
+/* ── 5. PIED DE PAGE INSTITUTIONNEL ── */
 .site-footer {
   background-color: var(--c-ink);
   color: rgba(255, 255, 255, 0.72);
