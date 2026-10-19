@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-
-# Emplacement officiel du sitemap pour Google & Bing
-Sitemap: https://mombereola-fashion.com/sitemap.xml
