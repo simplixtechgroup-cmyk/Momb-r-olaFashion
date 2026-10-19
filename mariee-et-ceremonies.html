@@ -25,242 +25,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Socle CSS Modulaire -->
+  <!-- Socle CSS Modulaire Consolidé -->
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/reset-base.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/layout.css">
-
-  <!-- Styles dédiés à l'Espace Mariage -->
-  <style>
-    /* ── Arche Romane Couture ── */
-    .arch-frame {
-      position: relative;
-      border-radius: 200px 200px var(--radius-md) var(--radius-md);
-      overflow: hidden;
-      border: 1.5px solid var(--c-gold);
-      box-shadow: var(--shadow-card);
-      background-color: var(--c-blush-soft);
-      padding: 6px;
-    }
-
-    .arch-frame-inner {
-      border-radius: 194px 194px calc(var(--radius-md) - 4px) calc(var(--radius-md) - 4px);
-      overflow: hidden;
-      width: 100%;
-      height: 100%;
-    }
-
-    .arch-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s var(--ease-couture);
-    }
-
-    .arch-frame:hover img {
-      transform: scale(1.03);
-    }
-
-    /* ── Hero Mariée ── */
-    .hero-bridal {
-      padding: 40px 0 60px;
-      background: radial-gradient(circle at top right, rgba(248, 215, 222, 0.4) 0%, transparent 60%);
-    }
-
-    .hero-bridal-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 40px;
-      align-items: center;
-    }
-
-    @media (min-width: 992px) {
-      .hero-bridal-grid {
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 60px;
-      }
-    }
-
-    /* ── Formules Mariage & Cortège ── */
-    .packages-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 28px;
-      margin-top: 48px;
-    }
-
-    @media (min-width: 768px) {
-      .packages-grid { grid-template-columns: repeat(3, 1fr); }
-    }
-
-    .package-card {
-      background: var(--c-white);
-      border-radius: var(--radius-md);
-      border: 1px solid var(--c-gold-border);
-      padding: 36px 28px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: var(--transition-smooth);
-      position: relative;
-    }
-
-    .package-card.highlight {
-      background: var(--c-blush-soft);
-      border: 2px solid var(--c-gold);
-      box-shadow: var(--shadow-card);
-      transform: scale(1.02);
-    }
-
-    @media (max-width: 767px) {
-      .package-card.highlight { transform: none; }
-    }
-
-    .package-tag {
-      position: absolute;
-      top: -12px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--c-bordeaux);
-      color: var(--c-white);
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 4px 14px;
-      border-radius: var(--radius-full);
-      white-space: nowrap;
-    }
-
-    .package-title {
-      font-size: 1.5rem;
-      margin-top: 8px;
-      margin-bottom: 6px;
-      color: var(--c-ink);
-    }
-
-    .package-subtitle {
-      font-size: 0.82rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--c-bordeaux);
-      font-weight: 600;
-      margin-bottom: 20px;
-    }
-
-    .package-features {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 28px;
-      flex-grow: 1;
-    }
-
-    .package-features li {
-      font-size: 0.88rem;
-      color: var(--c-text-muted);
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      line-height: 1.5;
-    }
-
-    .package-features li svg {
-      color: var(--c-gold);
-      flex-shrink: 0;
-      margin-top: 3px;
-    }
-
-    /* ── Galerie Rituels & Détails Cérémonie ── */
-    .rituals-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      margin-top: 36px;
-    }
-
-    @media (min-width: 768px) {
-      .rituals-grid { grid-template-columns: repeat(4, 1fr); gap: 20px; }
-    }
-
-    .ritual-card {
-      background: var(--c-white);
-      border-radius: var(--radius-sm);
-      overflow: hidden;
-      border: 1px solid var(--c-gold-border);
-      box-shadow: var(--shadow-subtle);
-    }
-
-    .ritual-media {
-      aspect-ratio: 4 / 5;
-      overflow: hidden;
-    }
-
-    .ritual-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    .ritual-card:hover .ritual-media img {
-      transform: scale(1.05);
-    }
-
-    .ritual-caption {
-      padding: 10px;
-      text-align: center;
-      font-size: 0.76rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--c-bordeaux);
-    }
-
-    /* ── Conciergerie Interactive Mariage ── */
-    .wedding-inquiry-box {
-      background: var(--c-white);
-      border-radius: var(--radius-lg);
-      border: 1.5px solid var(--c-gold);
-      box-shadow: var(--shadow-card);
-      padding: 40px 24px;
-      margin-top: 60px;
-    }
-
-    @media (min-width: 768px) {
-      .wedding-inquiry-box { padding: 56px 48px; }
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-      margin-top: 24px;
-    }
-
-    @media (min-width: 640px) {
-      .form-row { grid-template-columns: 1fr 1fr; }
-    }
-
-    .custom-input {
-      width: 100%;
-      padding: 14px 18px;
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--c-gold-border);
-      background: var(--c-blush-soft);
-      font-family: var(--font-sans);
-      font-size: 0.9rem;
-      color: var(--c-ink);
-    }
-
-    .custom-input:focus {
-      outline: none;
-      border-color: var(--c-gold);
-      background: #FFFFFF;
-    }
-  </style>
 
   <!-- Schema.org SEO Service Mariage -->
   <script type="application/ld+json">
@@ -301,7 +70,8 @@
         <a href="index.html" class="nav-link">Accueil</a>
         <a href="mariee-et-ceremonies.html" class="nav-link active">Mariage & Cortège</a>
         <a href="index.html#expertises" class="nav-link">Soins & Tresses</a>
-        <a href="index.html#academie" class="nav-link">Académie</a>
+        <a href="academie.html" class="nav-link">Académie</a>
+        <a href="lookbook.html" class="nav-link">Lookbook</a>
         <a href="#formules" class="btn btn-gold" style="padding: 10px 22px; font-size: 0.8rem;">
           Nos Formules Cortège
         </a>
@@ -327,7 +97,7 @@
             Haute Mise en Beauté Cérémonielle · Cotonou
           </span>
 
-          <p style="font-family: var(--font-serif); font-style: italic; font-size: 1.35rem; color: var(--c-bordeaux); margin-bottom: 6px;">
+          <p class="founder-tagline" style="font-size: 1.35rem; margin-bottom: 6px;">
             Le grand jour, chaque détail compte.
           </p>
 
@@ -614,7 +384,7 @@
           <p style="margin-bottom: 12px;">
             L'excellence de la mise en beauté nuptiale à Cotonou, dirigée par Latifath. Près de 10 ans d'amour du geste juste.
           </p>
-          <p style="color: var(--c-gold); font-family: var(--font-serif); font-style: italic;">
+          <p class="founder-tagline" style="color: var(--c-gold); font-size: 1.1rem;">
             Révéler la beauté, transmettre un métier.
           </p>
         </div>
@@ -623,8 +393,9 @@
           <h4 style="font-size: 1.15rem;">Liens Rapides</h4>
           <p><a href="index.html">Retour à l'Accueil</a></p>
           <p><a href="mariee-et-ceremonies.html">Formules Mariage</a></p>
-          <p><a href="index.html#academie">Académie d'État</a></p>
-          <p><a href="index.html#contact">Contact & Localisation</a></p>
+          <p><a href="academie.html">Académie d'État</a></p>
+          <p><a href="lookbook.html">Lookbook</a></p>
+          <p><a href="contact.html">Contact & Localisation</a></p>
         </div>
 
         <div class="footer-col">
@@ -655,11 +426,9 @@
     </a>
   </aside>
 
-  <!-- Script Générateur Dynamique de Message WhatsApp -->
   <script>
     document.getElementById('yearPlaceholder').textContent = new Date().getFullYear();
 
-    // Menu Mobile
     const burgerToggle = document.getElementById('burgerToggle');
     const desktopNav = document.querySelector('.desktop-nav');
     burgerToggle.addEventListener('click', () => {
@@ -676,7 +445,6 @@
       desktopNav.style.borderBottom = '1px solid var(--c-gold-border)';
     });
 
-    // Générateur intelligent WhatsApp Mariage
     document.getElementById('bridalForm').addEventListener('submit', function(e) {
       e.preventDefault();
       const name = document.getElementById('brideName').value;
