@@ -13,372 +13,23 @@
   <link rel="icon" type="image/png" sizes="192x192" href="logo/favicon-192.png">
   <link rel="apple-touch-icon" href="logo/apple-touch-icon.png">
 
-  <!-- Open Graph / Réseaux sociaux -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Mombèrèola Fashion — Fondée par Latifath | Cotonou">
   <meta property="og:description" content="Révéler la beauté, transmettre un métier. Près de dix ans d'expertise au service de la femme béninoise.">
   <meta property="og:image" content="images/og-image-mombereola-fashion.jpg">
   <meta property="og:locale" content="fr_BJ">
 
-  <!-- Typographies Google Fonts (Performance sans blocage) -->
+  <!-- Typographies Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Feuilles de style modulaires du Jalon 1 -->
+  <!-- Feuilles de style modulaires consolidées -->
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/reset-base.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/layout.css">
-
-  <!-- Styles éditoriaux spécifiques à la Page d'Accueil (Arches & Grille Portfolio) -->
-  <style>
-    /* ── L'Arche Romane Couture (Signature visuelle du Portfolio) ── */
-    .arch-frame {
-      position: relative;
-      border-radius: 200px 200px var(--radius-md) var(--radius-md);
-      overflow: hidden;
-      border: 1.5px solid var(--c-gold);
-      box-shadow: var(--shadow-card);
-      background-color: var(--c-blush-soft);
-      padding: 6px;
-    }
-
-    .arch-frame-inner {
-      border-radius: 194px 194px calc(var(--radius-md) - 4px) calc(var(--radius-md) - 4px);
-      overflow: hidden;
-      width: 100%;
-      height: 100%;
-    }
-
-    .arch-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s var(--ease-couture);
-    }
-
-    .arch-frame:hover img {
-      transform: scale(1.03);
-    }
-
-    /* ── Hero Section ── */
-    .hero-editorial {
-      padding: 40px 0 70px;
-    }
-
-    .hero-editorial-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 40px;
-      align-items: center;
-    }
-
-    @media (min-width: 992px) {
-      .hero-editorial-grid {
-        grid-template-columns: 1.15fr 0.85fr;
-        gap: 60px;
-        padding: 30px 0;
-      }
-    }
-
-    .founder-tagline {
-      font-family: var(--font-serif);
-      font-style: italic;
-      font-size: 1.35rem;
-      color: var(--c-bordeaux);
-      margin-bottom: 8px;
-    }
-
-    .hero-stats-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-top: 36px;
-      padding-top: 24px;
-      border-top: 1px solid var(--c-gold-border);
-    }
-
-    .stat-item strong {
-      font-family: var(--font-serif);
-      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
-      color: var(--c-ink);
-      display: block;
-      line-height: 1.1;
-    }
-
-    .stat-item span {
-      font-size: 0.76rem;
-      color: var(--c-text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    /* ── Les 6 Domaines d'Expertise (Page 3 du Portfolio) ── */
-    .expertise-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
-      margin-top: 40px;
-    }
-
-    @media (min-width: 640px) {
-      .expertise-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (min-width: 1024px) {
-      .expertise-grid { grid-template-columns: repeat(3, 1fr); gap: 28px; }
-    }
-
-    .expertise-card {
-      background: var(--c-white);
-      border-radius: var(--radius-md);
-      padding: 36px 28px;
-      border: 1px solid var(--c-gold-border);
-      position: relative;
-      transition: var(--transition-smooth);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .expertise-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-card);
-      border-color: var(--c-gold);
-    }
-
-    .expertise-number {
-      font-family: var(--font-serif);
-      font-size: 2.2rem;
-      color: var(--c-gold);
-      line-height: 1;
-      margin-bottom: 16px;
-      font-weight: 400;
-    }
-
-    .expertise-card h3 {
-      font-size: 1.4rem;
-      margin-bottom: 12px;
-      color: var(--c-ink);
-    }
-
-    .expertise-card p {
-      font-size: 0.9rem;
-      color: var(--c-text-muted);
-      line-height: 1.6;
-    }
-
-    /* ── Section Mariage & Toute la Maison (Page 4 du Portfolio) ── */
-    .wedding-focus {
-      background: linear-gradient(180deg, var(--c-blush-soft) 0%, #FFFFFF 100%);
-      padding: 90px 0;
-      position: relative;
-    }
-
-    .wedding-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 48px;
-      align-items: center;
-    }
-
-    @media (min-width: 992px) {
-      .wedding-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 70px;
-      }
-    }
-
-    .wedding-checklist {
-      list-style: none;
-      margin: 28px 0;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .wedding-checklist li {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 0.98rem;
-      color: var(--c-ink);
-      font-weight: 500;
-    }
-
-    .wedding-checklist li::before {
-      content: "🌸";
-      font-size: 1rem;
-    }
-
-    .wedding-gallery-duo {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-top: 20px;
-    }
-
-    .wedding-gallery-duo .caption {
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--c-bordeaux);
-      margin-top: 8px;
-      text-align: center;
-      font-weight: 600;
-    }
-
-    /* ── Section Savoir-Faire Étape par Étape (Page 6 du Portfolio) ── */
-    .steps-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-      margin-top: 40px;
-    }
-
-    @media (min-width: 768px) {
-      .steps-grid { grid-template-columns: repeat(3, 1fr); }
-    }
-
-    .step-card {
-      background: var(--c-white);
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      border: 1px solid var(--c-gold-border);
-      text-align: center;
-    }
-
-    .step-media {
-      height: 280px;
-      width: 100%;
-      overflow: hidden;
-    }
-
-    .step-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .step-body {
-      padding: 20px;
-    }
-
-    .step-badge {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: var(--c-gold);
-      color: var(--c-white);
-      font-weight: 700;
-      font-size: 0.85rem;
-      margin-bottom: 8px;
-    }
-
-    .step-title {
-      font-size: 1.1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--c-bordeaux);
-      font-weight: 700;
-    }
-
-    /* ── Section Académie & Bourse d'État (Page 8 du Portfolio) ── */
-    .academy-banner {
-      background: linear-gradient(135deg, #1C1215 0%, #38141F 100%);
-      color: var(--c-white);
-      border-radius: var(--radius-lg);
-      padding: 48px 24px;
-      border: 1px solid var(--c-gold);
-      box-shadow: var(--shadow-floating);
-      margin: 60px 0;
-    }
-
-    @media (min-width: 992px) {
-      .academy-banner {
-        padding: 64px 56px;
-      }
-    }
-
-    .academy-flex {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 40px;
-      align-items: center;
-    }
-
-    @media (min-width: 992px) {
-      .academy-flex {
-        grid-template-columns: 1.2fr 0.8fr;
-        gap: 60px;
-      }
-    }
-
-    .support-card {
-      background: rgba(216, 27, 96, 0.12);
-      border: 1px solid rgba(216, 27, 96, 0.35);
-      border-radius: var(--radius-md);
-      padding: 24px;
-      margin-top: 32px;
-    }
-
-    /* ── Galerie de Gélés "Élégance en Couleurs" (Page 5 du Portfolio) ── */
-    .gele-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      margin-top: 36px;
-    }
-
-    @media (min-width: 768px) {
-      .gele-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    }
-
-    .gele-card {
-      background: var(--c-white);
-      border-radius: var(--radius-sm);
-      overflow: hidden;
-      border: 1px solid var(--c-gold-border);
-      box-shadow: var(--shadow-subtle);
-      transition: var(--transition-smooth);
-    }
-
-    .gele-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-card);
-    }
-
-    .gele-media {
-      aspect-ratio: 4 / 5;
-      overflow: hidden;
-    }
-
-    .gele-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    .gele-card:hover .gele-media img {
-      transform: scale(1.04);
-    }
-
-    .gele-caption {
-      padding: 12px 14px;
-      text-align: center;
-      font-size: 0.74rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--c-bordeaux);
-      border-top: 1px solid rgba(104, 26, 42, 0.08);
-    }
-  </style>
 
   <!-- Balisage SEO Local JSON-LD -->
   <script type="application/ld+json">
@@ -409,7 +60,7 @@
        ======================================================================== -->
   <header class="site-header">
     <div class="container header-container">
-      <a href="#accueil" class="brand-identity" aria-label="Mombèrèola Fashion Accueil">
+      <a href="index.html" class="brand-identity" aria-label="Mombèrèola Fashion Accueil">
         <img src="logo/logo-mombereola-fashion.png" alt="Logo de l'institut de beauté Mombèrèola Fashion" width="50" height="50">
         <div class="brand-text">
           <span class="brand-title">Mombèrèola Fashion</span>
@@ -421,11 +72,11 @@
       <nav class="desktop-nav" aria-label="Menu principal">
         <a href="#apropos" class="nav-link">La Maison</a>
         <a href="#expertises" class="nav-link">Expertises</a>
-        <a href="#mariage" class="nav-link">Mariage & Cortège</a>
+        <a href="mariee-et-ceremonies.html" class="nav-link">Mariage & Cortège</a>
         <a href="#savoir-faire" class="nav-link">Savoir-Faire</a>
-        <a href="#academie" class="nav-link">Académie</a>
-        <a href="#couleurs" class="nav-link">Créations</a>
-        <a href="#contact" class="nav-link">Contact</a>
+        <a href="academie.html" class="nav-link">Académie</a>
+        <a href="lookbook.html" class="nav-link">Lookbook</a>
+        <a href="contact.html" class="nav-link">Contact</a>
         <a href="https://wa.me/2290196149051?text=Bonjour%20Madame%20Latifath%2C%20je%20souhaite%20prendre%20un%20rendez-vous%20%C3%A0%20l%27institut" 
            target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="padding: 10px 22px; font-size: 0.8rem;">
           Réserver via WhatsApp
@@ -549,8 +200,7 @@
               <p>La mariée, la famille, la maison : tout un cortège maquillé avec la même exigence, le jour où tout doit être parfait.</p>
             </div>
             <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--c-gold-border);">
-              <a href="https://wa.me/2290196149051?text=Bonjour%20Madame%20Latifath%2C%20je%20souhaite%20des%20informations%20pour%20un%20Mariage%20et%20Cort%C3%A8ge" 
-                 target="_blank" rel="noopener noreferrer" style="font-size: 0.8rem; font-weight: 700; color: var(--c-bordeaux); text-transform: uppercase; letter-spacing: 0.05em;">
+              <a href="mariee-et-ceremonies.html" style="font-size: 0.8rem; font-weight: 700; color: var(--c-bordeaux); text-transform: uppercase; letter-spacing: 0.05em;">
                 Formule Cortège &rarr;
               </a>
             </div>
@@ -609,7 +259,7 @@
               <p>Apprentissage rigoureux en esthétique générale, coiffure, tresse, maquillage et nouage de foulards donnant droit à un diplôme officiel.</p>
             </div>
             <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--c-gold-border);">
-              <a href="#academie" style="font-size: 0.8rem; font-weight: 700; color: var(--c-bordeaux); text-transform: uppercase; letter-spacing: 0.05em;">
+              <a href="academie.html" style="font-size: 0.8rem; font-weight: 700; color: var(--c-bordeaux); text-transform: uppercase; letter-spacing: 0.05em;">
                 Voir les Bourses d'études &rarr;
               </a>
             </div>
@@ -673,9 +323,8 @@
           </ul>
 
           <div style="margin-top: 32px;">
-            <a href="https://wa.me/2290196149051?text=Bonjour%20Madame%20Latifath%2C%20je%20souhaite%20r%C3%A9server%20la%20prestation%20Mari%C3%A9e%20et%20Cort%C3%A8ge%20de%20Famille" 
-               target="_blank" rel="noopener noreferrer" class="btn btn-gold">
-              Planifier Mon Mariage avec Latifath
+            <a href="mariee-et-ceremonies.html" class="btn btn-gold">
+              Découvrir les Formules Mariage & Cortège
             </a>
           </div>
         </div>
@@ -735,19 +384,17 @@
           </div>
         </div>
 
-        <!-- Encadré Cabine Soins du Visage & Tresses d'art (Page 7) -->
+        <!-- Encadré Cabine Soins du Visage -->
         <div style="margin-top: 60px; background: var(--c-white); border-radius: var(--radius-md); padding: 36px 28px; border: 1px solid var(--c-gold-border);">
-          <div style="display:grid; grid-template-columns: 1fr; gap: 32px; align-items:center;">
-            <div>
-              <span class="badge badge-bordeaux">Cabine & Bien-Être</span>
-              <h3 style="font-size: 1.6rem; margin: 12px 0;">Soins du Visage Dermato-Esthétiques & Tresses Nettes</h3>
-              <p style="margin-bottom: 16px;">
-                En institut, masque réparateur, gommage doux et massage sous vapeur ozonée redonnent au visage repos et éclat, dans le respect strict de la physiologie de votre peau. Les tresses sont réalisées avec une tension millimétrée, sans douleur.
-              </p>
-              <p style="font-size: 0.84rem; color: var(--c-bordeaux); font-weight: 600;">
-                ✓ Hygiène hospitalière : blouse blanche, charlotte, gants stériles et masque chirurgical pour chaque soin.
-              </p>
-            </div>
+          <div>
+            <span class="badge badge-bordeaux">Cabine & Bien-Être</span>
+            <h3 style="font-size: 1.6rem; margin: 12px 0;">Soins du Visage Dermato-Esthétiques & Tresses Nettes</h3>
+            <p style="margin-bottom: 16px;">
+              En institut, masque réparateur, gommage doux et massage sous vapeur ozonée redonnent au visage repos et éclat, dans le respect strict de la physiologie de votre peau. Les tresses sont réalisées avec une tension millimétrée, sans douleur.
+            </p>
+            <p style="font-size: 0.84rem; color: var(--c-bordeaux); font-weight: 600;">
+              ✓ Hygiène hospitalière : blouse blanche, charlotte, gants stériles et masque chirurgical pour chaque soin.
+            </p>
           </div>
         </div>
       </div>
@@ -770,27 +417,15 @@
               L'institut forme les futures professionnelles de la beauté et soutient des jeunes filles défavorisées grâce à des <strong>bourses de formation d'excellence</strong> : <strong>3 ans d'apprentissage</strong> menant directement à un <strong>Diplôme d'État officiel</strong>.
             </p>
 
-            <p style="font-size: 0.9rem; color: var(--c-gold); font-weight: 600; margin-bottom: 14px;">
-              Filières officielles enseignées :
-            </p>
-            <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom: 28px;">
-              <span class="badge badge-bordeaux" style="background:rgba(255,255,255,0.1); color:#FFF; border-color:rgba(255,255,255,0.2);">Esthétique générale</span>
-              <span class="badge badge-bordeaux" style="background:rgba(255,255,255,0.1); color:#FFF; border-color:rgba(255,255,255,0.2);">Coiffure</span>
-              <span class="badge badge-bordeaux" style="background:rgba(255,255,255,0.1); color:#FFF; border-color:rgba(255,255,255,0.2);">Tresses d'art</span>
-              <span class="badge badge-bordeaux" style="background:rgba(255,255,255,0.1); color:#FFF; border-color:rgba(255,255,255,0.2);">Maquillage pro</span>
-              <span class="badge badge-bordeaux" style="background:rgba(255,255,255,0.1); color:#FFF; border-color:rgba(255,255,255,0.2);">Nouage de foulards</span>
-            </div>
-
             <div class="support-card">
               <p style="font-family: var(--font-serif); font-size: 1.35rem; font-style: italic; color: #FFFFFF; margin-bottom: 6px;">
                 Soutenir ce projet d'émancipation ?
               </p>
               <p style="font-size: 0.86rem; color: rgba(255,255,255,0.8); margin-bottom: 14px;">
-                Partenaire, institution ou personne de bonne volonté : rejoignez la démarche de l'Honorable Denise Hounmenou et de Latifath pour offrir des bourses à de nouvelles jeunes filles.
+                Partenaire, institution ou personne de bonne volonté : rejoignez la démarche de l'Honorable Denise Hounmenou et de Latifath.
               </p>
-              <a href="https://wa.me/2290196149051?text=Bonjour%20Madame%20Latifath%2C%20je%20souhaite%20des%20informations%20concernant%20les%20Bourses%20de%20Formation" 
-                 target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="font-size: 0.82rem;">
-                Rejoindre la démarche / Candidater
+              <a href="academie.html" class="btn btn-gold" style="font-size: 0.82rem;">
+                Découvrir l'Académie & Les Bourses
               </a>
             </div>
           </div>
@@ -808,76 +443,7 @@
     </section>
 
     <!-- ========================================================================
-       7. RÉALISATIONS : « ÉLÉGANCE EN COULEURS » (Page 5 du Portfolio)
-       ======================================================================== -->
-    <section class="section-py" id="couleurs">
-      <div class="container">
-        <div style="text-align: center; max-width: 640px; margin: 0 auto;">
-          <span class="badge badge-gold">Portfolio Haute Coiffure</span>
-          <h2 style="margin-top: 12px; margin-bottom: 10px;">Élégance en Couleurs</h2>
-          <p>L'harmonie sacrée entre les étoffes, les gélés architecturaux et la mise en valeur des teints africains.</p>
-        </div>
-
-        <div class="gele-grid">
-          <!-- 1. Foulard Jaune & Tenue Dorée -->
-          <div class="gele-card">
-            <div class="gele-media">
-              <img src="images/maquillage-glamour-foulard-jaune-tenue-doree-mombereola-fashion.webp" 
-                   alt="Foulard jaune et tenue dorée brodée" width="606" height="1080" loading="lazy">
-            </div>
-            <p class="gele-caption">Foulard Jaune & Tenue Dorée</p>
-          </div>
-
-          <!-- 2. Gélé Menthe & Broderies Fleuries -->
-          <div class="gele-card">
-            <div class="gele-media">
-              <img src="images/maquillage-soiree-gele-vert-d-eau-tenue-fleurs-mombereola-fashion.webp" 
-                   alt="Gélé menthe et broderies fleuries" width="606" height="1080" loading="lazy">
-            </div>
-            <p class="gele-caption">Gélé Menthe & Broderies Fleuries</p>
-          </div>
-
-          <!-- 3. Gélé Noir & Sequins Verts -->
-          <div class="gele-card">
-            <div class="gele-media">
-              <img src="images/maquillage-glamour-gele-noir-tenue-verte-mombereola-fashion.webp" 
-                   alt="Gélé noir et tenue verte à sequins" width="606" height="1080" loading="lazy">
-            </div>
-            <p class="gele-caption">Gélé Noir & Sequins Verts</p>
-          </div>
-
-          <!-- 4. Gélé Rose & Tenue Brodée -->
-          <div class="gele-card">
-            <div class="gele-media">
-              <img src="images/maquillage-ceremonie-gele-rose-tenue-brodee-mombereola-fashion.webp" 
-                   alt="Gélé rose et tenue brodée" width="606" height="1080" loading="lazy">
-            </div>
-            <p class="gele-caption">Gélé Rose & Tenue Brodée</p>
-          </div>
-
-          <!-- 5. Gélé Vert Émeraude -->
-          <div class="gele-card">
-            <div class="gele-media">
-              <img src="images/maquillage-fete-gele-vert-boubou-jaune-mombereola-fashion.webp" 
-                   alt="Gélé vert émeraude et boubou jaune" width="607" height="1080" loading="lazy">
-            </div>
-            <p class="gele-caption">Gélé Vert Émeraude</p>
-          </div>
-
-          <!-- 6. Chignon & Robe Corail -->
-          <div class="gele-card">
-            <div class="gele-media">
-              <img src="images/portrait-maquillage-coiffure-chignon-robe-corail-mombereola-fashion.webp" 
-                   alt="Coiffure chignon d'apparat et robe corail" width="795" height="1200" loading="lazy">
-            </div>
-            <p class="gele-caption">Chignon & Robe Corail</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================================================
-       8. CONTACT & COLLABORONS (Page 9 du Portfolio)
+       7. CONTACT & COLLABORONS (Page 9 du Portfolio)
        ======================================================================== -->
     <section class="section-py" id="contact" style="background-color: var(--c-white); border-top: 1px solid var(--c-gold-border);">
       <div class="container" style="max-width: 840px; text-align: center;">
@@ -892,7 +458,6 @@
         </p>
 
         <div style="display:grid; grid-template-columns: 1fr; gap: 20px; margin-bottom: 36px;">
-          <!-- Bouton Téléphone / WhatsApp Principal -->
           <a href="https://wa.me/2290196149051?text=Bonjour%20Madame%20Latifath%2C%20je%20vous%20contacte%20depuis%20le%20site%20officiel" 
              target="_blank" rel="noopener noreferrer" 
              class="card-luxury" style="padding: 24px; display:flex; flex-direction:column; align-items:center; gap:6px; border-color: var(--c-gold);">
@@ -904,7 +469,6 @@
             </strong>
           </a>
 
-          <!-- Réseaux Sociaux -->
           <div class="card-luxury" style="padding: 24px;">
             <span style="font-size: 0.74rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c-text-muted);">
               Instagram · Facebook · TikTok
@@ -924,7 +488,7 @@
   </main>
 
   <!-- ========================================================================
-       9. PIED DE PAGE HAUTE MAISON
+       8. PIED DE PAGE HAUTE MAISON
        ======================================================================== -->
   <footer class="site-footer">
     <div class="container">
@@ -941,17 +505,17 @@
 
         <div class="footer-col">
           <h4 style="font-size: 1.15rem;">Navigation</h4>
-          <p><a href="#apropos">La Maison & Latifath</a></p>
-          <p><a href="#expertises">Nos 6 Domaines de Soin</a></p>
-          <p><a href="#mariage">Mariage & Cortège</a></p>
-          <p><a href="#academie">Académie & Bourse d'État</a></p>
-          <p><a href="#couleurs">Galerie des Gélés</a></p>
+          <p><a href="index.html">La Maison & Latifath</a></p>
+          <p><a href="mariee-et-ceremonies.html">Mariage & Cortège</a></p>
+          <p><a href="academie.html">Académie & Bourse d'État</a></p>
+          <p><a href="lookbook.html">Le Lookbook</a></p>
+          <p><a href="contact.html">Contact & Accès</a></p>
         </div>
 
         <div class="footer-col">
           <h4 style="font-size: 1.15rem;">Horaires d'Accueil</h4>
           <p>Lundi au Samedi : 08h00 – 19h30</p>
-          <p>Dimanche : Réservé aux Mariées & Cortèges sur RDV</p>
+          <p>Dimanche : Réservé aux Mariées sur RDV</p>
           <p style="margin-top: 10px; color: var(--c-gold);">Cotonou, République du Bénin</p>
         </div>
       </div>
@@ -963,7 +527,7 @@
   </footer>
 
   <!-- ========================================================================
-       10. BARRE MOBILE FLOTTANTE (CONVERSION 4G WHATSAPP)
+       9. BARRE MOBILE FLOTTANTE
        ======================================================================== -->
   <aside class="mobile-concierge-bar" aria-label="Action rapide mobile">
     <a href="tel:+2290196149051" class="mobile-call-action" aria-label="Appeler Latifath au salon">
@@ -976,12 +540,9 @@
     </a>
   </aside>
 
-  <!-- Script Vanilla Ultra-Léger (Sans Dépendance) -->
   <script>
-    // Année dynamique
     document.getElementById('yearPlaceholder').textContent = new Date().getFullYear();
 
-    // Menu Mobile Simple & Fluide
     const burgerToggle = document.getElementById('burgerToggle');
     const desktopNav = document.querySelector('.desktop-nav');
 
