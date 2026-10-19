@@ -25,167 +25,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Socle CSS Modulaire -->
+  <!-- Socle CSS Modulaire Consolidé -->
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/reset-base.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/layout.css">
-
-  <style>
-    /* ── Hero Académie Institutionnel ── */
-    .hero-academy {
-      padding: 40px 0 60px;
-      background: linear-gradient(180deg, rgba(104, 26, 42, 0.04) 0%, transparent 100%);
-    }
-
-    .hero-academy-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 40px;
-      align-items: center;
-    }
-
-    @media (min-width: 992px) {
-      .hero-academy-grid {
-        grid-template-columns: 1.15fr 0.85fr;
-        gap: 60px;
-      }
-    }
-
-    /* ── Cursus 3 Ans (Timeline) ── */
-    .curriculum-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-      margin-top: 40px;
-    }
-
-    @media (min-width: 768px) {
-      .curriculum-grid { grid-template-columns: repeat(3, 1fr); }
-    }
-
-    .curriculum-card {
-      background: var(--c-white);
-      border-radius: var(--radius-md);
-      padding: 32px 24px;
-      border: 1px solid var(--c-gold-border);
-      position: relative;
-      box-shadow: var(--shadow-subtle);
-    }
-
-    .curriculum-year {
-      font-family: var(--font-serif);
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: var(--c-gold);
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-
-    .curriculum-card h3 {
-      font-size: 1.25rem;
-      margin-bottom: 12px;
-      color: var(--c-ink);
-    }
-
-    .curriculum-card ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      font-size: 0.88rem;
-      color: var(--c-text-muted);
-    }
-
-    .curriculum-card ul li::before {
-      content: "•";
-      color: var(--c-bordeaux);
-      font-weight: bold;
-      display: inline-block;
-      width: 1em;
-      margin-left: -1em;
-    }
-
-    /* ── Grille des 5 Filières ── */
-    .filiere-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
-      margin-top: 36px;
-    }
-
-    @media (min-width: 640px) {
-      .filiere-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (min-width: 1024px) {
-      .filiere-grid { grid-template-columns: repeat(3, 1fr); }
-    }
-
-    .filiere-card {
-      background: var(--c-white);
-      border-radius: var(--radius-md);
-      padding: 28px;
-      border: 1px solid var(--c-gold-border);
-      transition: var(--transition-smooth);
-    }
-
-    .filiere-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-card);
-      border-color: var(--c-gold);
-    }
-
-    .filiere-card h4 {
-      font-size: 1.3rem;
-      margin-top: 10px;
-      margin-bottom: 8px;
-      color: var(--c-ink);
-    }
-
-    /* ── Bloc Bourse & Mécénat ── */
-    .bourse-spotlight {
-      background: linear-gradient(135deg, #161214 0%, #301018 100%);
-      color: var(--c-white);
-      border-radius: var(--radius-lg);
-      padding: 48px 24px;
-      border: 1px solid var(--c-gold);
-      box-shadow: var(--shadow-floating);
-      margin: 60px 0;
-    }
-
-    @media (min-width: 992px) {
-      .bourse-spotlight { padding: 64px 56px; }
-    }
-
-    .bourse-layout {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 40px;
-      align-items: center;
-    }
-
-    @media (min-width: 992px) {
-      .bourse-layout {
-        grid-template-columns: 1.15fr 0.85fr;
-        gap: 60px;
-      }
-    }
-
-    /* Formulaire candidature / mécénat */
-    .academy-form-card {
-      background: var(--c-white);
-      border-radius: var(--radius-lg);
-      border: 1.5px solid var(--c-gold);
-      box-shadow: var(--shadow-card);
-      padding: 40px 24px;
-      margin-top: 40px;
-    }
-
-    @media (min-width: 768px) {
-      .academy-form-card { padding: 56px 48px; }
-    }
-  </style>
 
   <!-- Schema.org SEO Cours & Formation -->
   <script type="application/ld+json">
@@ -226,7 +70,8 @@
         <a href="index.html" class="nav-link">Accueil</a>
         <a href="mariee-et-ceremonies.html" class="nav-link">Mariage & Cortège</a>
         <a href="academie.html" class="nav-link active">Académie</a>
-        <a href="#filieres" class="nav-link">Filières</a>
+        <a href="lookbook.html" class="nav-link">Lookbook</a>
+        <a href="contact.html" class="nav-link">Contact</a>
         <a href="#candidature" class="btn btn-gold" style="padding: 10px 22px; font-size: 0.8rem;">
           Postuler à la Bourse
         </a>
@@ -252,7 +97,7 @@
             Apprentissage Agréé d'État · Cotonou
           </span>
 
-          <p style="font-family: var(--font-serif); font-style: italic; font-size: 1.35rem; color: var(--c-bordeaux); margin-bottom: 6px;">
+          <p class="founder-tagline" style="font-size: 1.35rem; margin-bottom: 6px;">
             Révéler la beauté, transmettre un métier.
           </p>
 
@@ -307,7 +152,6 @@
 
         <div class="filiere-grid">
           
-          <!-- Filière 1 -->
           <div class="filiere-card">
             <span class="badge badge-gold">Filière 01</span>
             <h4>Esthétique Générale</h4>
@@ -316,7 +160,6 @@
             </p>
           </div>
 
-          <!-- Filière 2 -->
           <div class="filiere-card">
             <span class="badge badge-gold">Filière 02</span>
             <h4>Coiffure Dame &amp; Chignon</h4>
@@ -325,7 +168,6 @@
             </p>
           </div>
 
-          <!-- Filière 3 -->
           <div class="filiere-card">
             <span class="badge badge-gold">Filière 03</span>
             <h4>Tresses d'Art Africaines</h4>
@@ -334,7 +176,6 @@
             </p>
           </div>
 
-          <!-- Filière 4 -->
           <div class="filiere-card">
             <span class="badge badge-gold">Filière 04</span>
             <h4>Maquillage Professionnel</h4>
@@ -343,7 +184,6 @@
             </p>
           </div>
 
-          <!-- Filière 5 -->
           <div class="filiere-card">
             <span class="badge badge-gold">Filière 05</span>
             <h4>Nouage de Foulards &amp; Gélé</h4>
@@ -352,7 +192,6 @@
             </p>
           </div>
 
-          <!-- Filière Transversale -->
           <div class="filiere-card" style="background: var(--c-blush-soft); border-color: var(--c-gold);">
             <span class="badge badge-magenta">Compétence Clé</span>
             <h4>Gestion &amp; Accueil Clientèle</h4>
@@ -534,7 +373,7 @@
           <p style="margin-bottom: 12px;">
             Académie d'artisanat et institut de beauté à Cotonou. Former les artisanes de demain avec la rigueur d'État.
           </p>
-          <p style="color: var(--c-gold); font-family: var(--font-serif); font-style: italic;">
+          <p class="founder-tagline" style="color: var(--c-gold); font-size: 1.1rem;">
             Révéler la beauté, transmettre un métier.
           </p>
         </div>
@@ -544,7 +383,8 @@
           <p><a href="index.html">Accueil Maison</a></p>
           <p><a href="mariee-et-ceremonies.html">Mariage & Cortège</a></p>
           <p><a href="academie.html">Académie d'État</a></p>
-          <p><a href="index.html#contact">Contact & Accès</a></p>
+          <p><a href="lookbook.html">Lookbook & Vidéos</a></p>
+          <p><a href="contact.html">Contact & Accès</a></p>
         </div>
 
         <div class="footer-col">
@@ -575,11 +415,9 @@
     </a>
   </aside>
 
-  <!-- Script Générateur WhatsApp Inscription -->
   <script>
     document.getElementById('yearPlaceholder').textContent = new Date().getFullYear();
 
-    // Menu Mobile
     const burgerToggle = document.getElementById('burgerToggle');
     const desktopNav = document.querySelector('.desktop-nav');
     burgerToggle.addEventListener('click', () => {
@@ -596,7 +434,6 @@
       desktopNav.style.borderBottom = '1px solid var(--c-gold-border)';
     });
 
-    // Générateur intelligent WhatsApp Académie
     document.getElementById('academyForm').addEventListener('submit', function(e) {
       e.preventDefault();
       const name = document.getElementById('studentName').value;
