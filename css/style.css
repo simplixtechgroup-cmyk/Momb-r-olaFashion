@@ -48,3 +48,7 @@ nav.o{transform:none}nav a{width:100%;padding:16px 0;font-size:1.2rem;border-bot
 .sv{grid-template-columns:1fr}.sv div{border-right:0!important;margin:0!important;padding:26px 0}.vd{grid-template-columns:1fr 1fr}.vd video:last-child{display:none}.r2{grid-template-columns:1fr}
 .mb{display:flex;position:fixed;left:14px;right:14px;bottom:14px;z-index:60;gap:10px}.mb a{flex:1;text-align:center;padding:14px;border-radius:99px;font-weight:500;background:var(--fram);color:#fff;box-shadow:0 12px 30px -8px rgba(42,19,32,.5)}.mb a+a{background:#1E8E5A}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+/* Sécurité : si JS est désactivé ou lent, les éléments restent visibles */
+@media (prefers-reduced-motion: reduce) {
+  .rv { opacity: 1 !important; transform: none !important; }
+}
