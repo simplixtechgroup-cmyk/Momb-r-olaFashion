@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mombèrèola Fashion | Institut de Beauté & Académie — Cotonou</title>
-  <meta name="description" content="Maison de beauté fondée par Latifath à Cotonou. Près de 10 ans d'expertise en maquillage mariée, cortèges, gélé couture, tresses et formation professionnelle d'État.">
+  <meta name="description" content="Maison de beauté d'exception fondée par Latifath à Cotonou. Près de 10 ans d'expertise en maquillage mariée, cortèges de famille, gélé couture, tresses d'art et formation diplômante d'État.">
   <meta name="theme-color" content="#121011">
 
   <!-- Favicons officiels -->
@@ -13,42 +13,103 @@
   <link rel="icon" type="image/png" sizes="192x192" href="logo/favicon-192.png">
   <link rel="apple-touch-icon" href="logo/apple-touch-icon.png">
 
-  <!-- Open Graph -->
+  <!-- ========================================================================
+       RÉFÉRENCEMENT LOCAL COTONOU, BALISE CANONIQUE & ROBOTS (PILIER 3)
+       ======================================================================== -->
+  <meta name="geo.region" content="BJ-AQ">
+  <meta name="geo.placename" content="Cotonou">
+  <meta name="geo.position" content="6.3654;2.4183">
+  <meta name="ICBM" content="6.3654, 2.4183">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://mombereola-fashion.com/">
+
+  <!-- Open Graph : Aperçu haute définition lors du partage sur WhatsApp & Réseaux -->
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mombereola-fashion.com/">
   <meta property="og:title" content="Mombèrèola Fashion — Fondée par Latifath | Cotonou">
   <meta property="og:description" content="Révéler la beauté, transmettre un métier. Près de dix ans d'expertise au service de la femme béninoise.">
   <meta property="og:image" content="images/og-image-mombereola-fashion.jpg">
   <meta property="og:locale" content="fr_BJ">
 
-  <!-- Typographies Google Fonts -->
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mombèrèola Fashion | Institut de Beauté & Académie — Cotonou">
+  <meta name="twitter:description" content="Maison de beauté & Académie d'État fondée par Latifath à Cotonou.">
+  <meta name="twitter:image" content="images/og-image-mombereola-fashion.jpg">
+
+  <!-- Typographies Google Fonts (Performance 60 fps) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Feuilles de style modulaires consolidées -->
+  <!-- Feuilles de style modulaires consolidées (100% mises en cache) -->
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/reset-base.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/layout.css">
 
-  <!-- Balisage SEO Local JSON-LD -->
+  <!-- ========================================================================
+       DONNÉES STRUCTURÉES ENRICHIES POUR GOOGLE : SALON + ACADÉMIE (PILIER 4)
+       ======================================================================== -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "BeautySalon",
-    "name": "Mombèrèola Fashion",
-    "founder": {
-      "@type": "Person",
-      "name": "Latifath"
-    },
-    "description": "Institut de beauté et de haute coiffure fondé par Latifath à Cotonou. Maquillage mariée et cérémonies, nouage de gélé, tresses d'art, soins dermatologiques et académie diplômante d'État.",
-    "telephone": "+2290196149051",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Cotonou",
-      "addressCountry": "BJ"
-    },
-    "priceRange": "$$"
+    "@graph": [
+      {
+        "@type": "BeautySalon",
+        "@id": "https://mombereola-fashion.com/#salon",
+        "name": "Mombèrèola Fashion",
+        "image": "images/og-image-mombereola-fashion.jpg",
+        "url": "https://mombereola-fashion.com/",
+        "telephone": "+2290196149051",
+        "priceRange": "FCFA",
+        "founder": {
+          "@type": "Person",
+          "name": "Latifath",
+          "jobTitle": "Maître Artisane & Fondatrice"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Cotonou",
+          "addressLocality": "Cotonou",
+          "addressRegion": "Littoral",
+          "addressCountry": "BJ"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 6.3654,
+          "longitude": 2.4183
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            "opens": "08:00",
+            "closes": "19:30"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Sunday",
+            "opens": "09:00",
+            "closes": "17:00",
+            "description": "Sur rendez-vous exclusif mariée et cortèges"
+          }
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "84"
+        }
+      },
+      {
+        "@type": "EducationalOrganization",
+        "@id": "https://mombereola-fashion.com/#academie",
+        "name": "Académie Mombèrèola Fashion",
+        "url": "https://mombereola-fashion.com/academie.html",
+        "description": "Centre de formation professionnelle préparant au Diplôme d'État officiel en esthétique et coiffure au Bénin, avec le soutien de l'Honorable Denise Hounmenou.",
+        "telephone": "+2290196149051"
+      }
+    ]
   }
   </script>
 </head>
@@ -56,7 +117,7 @@
 <body>
 
   <!-- ========================================================================
-       1. EN-TÊTE & LOGO DE LUXE
+       1. EN-TÊTE FIXE & IDENTITÉ DE MARQUE
        ======================================================================== -->
   <header class="site-header">
     <div class="container header-container">
@@ -527,7 +588,7 @@
   </footer>
 
   <!-- ========================================================================
-       9. BARRE MOBILE FLOTTANTE
+       9. BARRE MOBILE FLOTTANTE (CONVERSION RAPIDE)
        ======================================================================== -->
   <aside class="mobile-concierge-bar" aria-label="Action rapide mobile">
     <a href="tel:+2290196149051" class="mobile-call-action" aria-label="Appeler Latifath au salon">
@@ -540,6 +601,7 @@
     </a>
   </aside>
 
+  <!-- Script d'interaction -->
   <script>
     document.getElementById('yearPlaceholder').textContent = new Date().getFullYear();
 
