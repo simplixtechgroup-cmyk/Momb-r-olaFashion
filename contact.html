@@ -25,131 +25,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Socle CSS Modulaire -->
+  <!-- Socle CSS Modulaire Consolidé -->
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/reset-base.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/layout.css">
-
-  <style>
-    /* ── Hero Contact ── */
-    .contact-hero {
-      padding: 40px 0 24px;
-      text-align: center;
-    }
-
-    /* ── Grille Principale Contact ── */
-    .contact-main-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 36px;
-      margin: 40px 0 70px;
-    }
-
-    @media (min-width: 992px) {
-      .contact-main-grid {
-        grid-template-columns: 1fr 1.25fr;
-        gap: 56px;
-      }
-    }
-
-    /* ── Cartes Coordonnées ── */
-    .contact-card-info {
-      background: var(--c-white);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--c-gold-border);
-      padding: 36px 28px;
-      box-shadow: var(--shadow-subtle);
-      display: flex;
-      flex-direction: column;
-      gap: 28px;
-    }
-
-    .contact-method {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-    }
-
-    .contact-icon-wrapper {
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      background: var(--c-gold-light);
-      border: 1px solid var(--c-gold-border);
-      color: var(--c-bordeaux);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .contact-method-text strong {
-      display: block;
-      font-size: 0.95rem;
-      color: var(--c-ink);
-      font-weight: 700;
-      margin-bottom: 2px;
-    }
-
-    .contact-method-text span, .contact-method-text a {
-      font-size: 0.88rem;
-      color: var(--c-text-muted);
-    }
-
-    .contact-method-text a:hover {
-      color: var(--c-bordeaux);
-    }
-
-    /* ── Boîte Formulaire Conciergerie ── */
-    .concierge-box {
-      background: var(--c-white);
-      border-radius: var(--radius-lg);
-      border: 1.5px solid var(--c-gold);
-      box-shadow: var(--shadow-card);
-      padding: 40px 24px;
-    }
-
-    @media (min-width: 768px) {
-      .concierge-box { padding: 48px 40px; }
-    }
-
-    .custom-field {
-      width: 100%;
-      padding: 14px 18px;
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--c-gold-border);
-      background: var(--c-blush-soft);
-      font-family: var(--font-sans);
-      font-size: 0.9rem;
-      color: var(--c-ink);
-      margin-top: 6px;
-    }
-
-    .custom-field:focus {
-      outline: none;
-      border-color: var(--c-gold);
-      background: #FFFFFF;
-    }
-
-    /* ── Bloc Réseaux Sociaux & Image ── */
-    .social-banner {
-      background: var(--c-blush-soft);
-      border-radius: var(--radius-md);
-      padding: 24px;
-      border: 1px solid var(--c-gold-border);
-      text-align: center;
-      margin-top: 10px;
-    }
-
-    .social-tag {
-      font-family: var(--font-serif);
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: var(--c-ink);
-      margin-top: 4px;
-    }
-  </style>
 
   <!-- Schema.org SEO Local Business -->
   <script type="application/ld+json">
@@ -288,7 +168,7 @@
             </div>
           </div>
 
-          <!-- Carte Réseaux Sociaux (Page 9 du Portfolio) -->
+          <!-- Carte Réseaux Sociaux -->
           <div class="social-banner">
             <span style="font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--c-bordeaux);">
               Instagram · Facebook · TikTok
@@ -375,7 +255,7 @@
           <p style="margin-bottom: 12px;">
             Maison de beauté et Académie professionnelle agréée d'État à Cotonou. Dirigée par Latifath depuis près de dix ans.
           </p>
-          <p style="color: var(--c-gold); font-family: var(--font-serif); font-style: italic;">
+          <p class="founder-tagline" style="color: var(--c-gold); font-size: 1.1rem;">
             Révéler la beauté, transmettre un métier.
           </p>
         </div>
@@ -386,6 +266,7 @@
           <p><a href="mariee-et-ceremonies.html">Mariage & Cortège</a></p>
           <p><a href="academie.html">Académie d'État</a></p>
           <p><a href="lookbook.html">Lookbook & Vidéos</a></p>
+          <p><a href="contact.html">Contact & Accès</a></p>
         </div>
 
         <div class="footer-col">
@@ -417,11 +298,9 @@
     </a>
   </aside>
 
-  <!-- Script Générateur WhatsApp Multi-Prestations -->
   <script>
     document.getElementById('yearPlaceholder').textContent = new Date().getFullYear();
 
-    // Menu Mobile
     const burgerToggle = document.getElementById('burgerToggle');
     const desktopNav = document.querySelector('.desktop-nav');
     burgerToggle.addEventListener('click', () => {
@@ -438,7 +317,6 @@
       desktopNav.style.borderBottom = '1px solid var(--c-gold-border)';
     });
 
-    // Générateur intelligent WhatsApp Conciergerie
     document.getElementById('contactBookingForm').addEventListener('submit', function(e) {
       e.preventDefault();
       const name = document.getElementById('clientName').value;
