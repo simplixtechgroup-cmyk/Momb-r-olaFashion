@@ -1,9 +1,8 @@
 /* ==========================================================================
-   MOMBÈRÈOLA FASHION — COMPOSANTS HAUTE MAISON
-   Version consolidée & optimisée
+   MOMBÈRÈOLA FASHION — COMPOSANTS HAUTE MAISON (100% CONSOLIDÉ)
    ========================================================================== */
 
-/* ── 1. BOUTONS COUTURE & APPELS À L'ACTION ── */
+/* ── 1. BOUTONS COUTURE ── */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -29,7 +28,6 @@
   transform: translateY(0);
 }
 
-/* Or Ciselé Miroir */
 .btn-gold {
   background: linear-gradient(135deg, var(--c-gold) 0%, var(--c-gold-dark) 100%);
   color: var(--c-white);
@@ -41,7 +39,6 @@
   filter: brightness(1.05);
 }
 
-/* Noir Encre Calligraphique */
 .btn-ink {
   background-color: var(--c-ink);
   color: var(--c-white);
@@ -51,7 +48,6 @@
   background-color: var(--c-bordeaux);
 }
 
-/* Contour Or Précision */
 .btn-outline-gold {
   background: transparent;
   color: var(--c-ink);
@@ -63,7 +59,6 @@
   border-color: var(--c-gold-dark);
 }
 
-/* WhatsApp Business Conversion */
 .btn-whatsapp {
   background-color: var(--c-wa-green);
   color: var(--c-white);
@@ -75,7 +70,6 @@
   box-shadow: 0 10px 26px rgba(37, 211, 102, 0.45);
 }
 
-/* Bouton Lookbook Modèle */
 .lookbook-btn {
   display: inline-flex;
   align-items: center;
@@ -100,7 +94,7 @@
   border-color: var(--c-bordeaux);
 }
 
-/* ── 2. BADGES, LABELS & RUBANS ── */
+/* ── 2. BADGES & DISTINCTIONS ── */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -163,7 +157,7 @@
   backdrop-filter: blur(6px);
 }
 
-/* ── 3. LA SIGNATURE ARCHE ROMANE (PORTFOLIO LATIFATH) ── */
+/* ── 3. L'ARCHE ROMANE DU PORTFOLIO ── */
 .arch-frame {
   position: relative;
   border-radius: 200px 200px var(--radius-md) var(--radius-md);
@@ -193,7 +187,7 @@
   transform: scale(1.03);
 }
 
-/* ── 4. CARTES SPÉCIALISÉES & ÉCRINS ── */
+/* ── 4. CARTES D'EXPERTISE, MARIAGE & ÉTAPES ── */
 .card-luxury {
   background-color: var(--c-white);
   border-radius: var(--radius-md);
@@ -209,7 +203,7 @@
   border-color: var(--c-gold);
 }
 
-/* Cartes d'Expertise 01 à 06 */
+/* Expertise 01 à 06 */
 .expertise-card {
   background: var(--c-white);
   border-radius: var(--radius-md);
@@ -243,7 +237,7 @@
   color: var(--c-ink);
 }
 
-/* Cartes de Formules Mariage & Cortège */
+/* Formules Mariage */
 .package-card {
   background: var(--c-white);
   border-radius: var(--radius-md);
@@ -309,7 +303,47 @@
   margin-top: 3px;
 }
 
-/* Cartes Démonstration Savoir-Faire (1, 2, 3) */
+/* Liste à Puces Mariage & Cortège */
+.wedding-checklist {
+  list-style: none;
+  margin: 28px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.wedding-checklist li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.98rem;
+  color: var(--c-ink);
+  font-weight: 500;
+}
+
+.wedding-checklist li::before {
+  content: "🌸";
+  font-size: 1rem;
+}
+
+.wedding-gallery-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.wedding-gallery-duo .caption {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--c-bordeaux);
+  margin-top: 8px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Étapes Savoir-Faire (1, 2, 3) */
 .step-card {
   background: var(--c-white);
   border-radius: var(--radius-md);
@@ -362,7 +396,7 @@
   font-weight: 700;
 }
 
-/* Cartes Cursus & Filières Académie */
+/* ── 5. CURSUS ACADÉMIE (AVEC PUCES BORDEAUX) ── */
 .curriculum-card {
   background: var(--c-white);
   border-radius: var(--radius-md);
@@ -388,6 +422,36 @@
   display: block;
 }
 
+.curriculum-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+  color: var(--c-ink);
+}
+
+.curriculum-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: var(--c-text-muted);
+  padding-left: 1.2em;
+}
+
+.curriculum-card ul li {
+  position: relative;
+}
+
+.curriculum-card ul li::before {
+  content: "•";
+  color: var(--c-bordeaux);
+  font-weight: bold;
+  font-size: 1.2rem;
+  position: absolute;
+  left: -1em;
+  top: -2px;
+}
+
 .filiere-card {
   background: var(--c-white);
   border-radius: var(--radius-md);
@@ -409,7 +473,7 @@
   color: var(--c-ink);
 }
 
-/* Cartes Gélés & Lookbook */
+/* ── 6. LOOKBOOK, GÉLÉS & VIDÉOTHÈQUE ── */
 .gele-card, .ritual-card, .lookbook-card {
   background: var(--c-white);
   border-radius: var(--radius-sm);
@@ -474,7 +538,7 @@
   line-height: 1.25;
 }
 
-/* ── 5. LECTEURS VIDÉO HAUTE TENUE ── */
+/* Boîte Vidéo */
 .video-box {
   background: var(--c-white);
   border-radius: var(--radius-md);
@@ -513,7 +577,7 @@
   line-height: 1.5;
 }
 
-/* ── 6. FORMULAIRES & CHAMPS DE CONCIERGERIE ── */
+/* ── 7. FORMULAIRES DE CONCIERGERIE ── */
 .concierge-box, .wedding-inquiry-box, .academy-form-card {
   background: var(--c-white);
   border-radius: var(--radius-lg);
@@ -559,7 +623,7 @@
   box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.18);
 }
 
-/* ── 7. FILTRES LOOKBOOK & ORNEMENTS ── */
+/* ── 8. FILTRES LOOKBOOK & ORNEMENTS ── */
 .filter-bar {
   display: flex;
   flex-wrap: wrap;
