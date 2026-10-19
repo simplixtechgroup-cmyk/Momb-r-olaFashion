@@ -25,209 +25,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Socle CSS Modulaire -->
+  <!-- Socle CSS Modulaire Consolidé -->
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/reset-base.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/layout.css">
-
-  <style>
-    /* ── En-Tête Lookbook ── */
-    .lookbook-hero {
-      padding: 40px 0 24px;
-      text-align: center;
-    }
-
-    /* ── Barre de Filtres Instantanés ── */
-    .filter-bar {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin: 32px 0 44px;
-    }
-
-    .filter-pill {
-      padding: 10px 22px;
-      border-radius: var(--radius-full);
-      font-size: 0.82rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      border: 1px solid var(--c-gold-border);
-      background: var(--c-white);
-      color: var(--c-text-muted);
-      transition: var(--transition-fast);
-      cursor: pointer;
-    }
-
-    .filter-pill.active, .filter-pill:hover {
-      background: var(--c-bordeaux);
-      color: var(--c-white);
-      border-color: var(--c-bordeaux);
-      box-shadow: 0 4px 14px rgba(104, 26, 42, 0.25);
-    }
-
-    /* ── Grille Éditoriale Lookbook ── */
-    .lookbook-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
-
-    @media (min-width: 768px) {
-      .lookbook-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    }
-
-    @media (min-width: 1024px) {
-      .lookbook-grid { grid-template-columns: repeat(4, 1fr); }
-    }
-
-    .lookbook-card {
-      background: var(--c-white);
-      border-radius: var(--radius-sm);
-      overflow: hidden;
-      border: 1px solid var(--c-gold-border);
-      box-shadow: var(--shadow-subtle);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: var(--transition-smooth);
-    }
-
-    .lookbook-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-card);
-      border-color: var(--c-gold);
-    }
-
-    .lookbook-thumb {
-      aspect-ratio: 4 / 5.2;
-      overflow: hidden;
-      position: relative;
-      background: var(--c-blush-soft);
-    }
-
-    .lookbook-thumb img, .lookbook-thumb video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    .lookbook-card:hover .lookbook-thumb img {
-      transform: scale(1.04);
-    }
-
-    .lookbook-badge {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      background: rgba(18, 16, 17, 0.85);
-      color: #FFFFFF;
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 4px 10px;
-      border-radius: var(--radius-full);
-      backdrop-filter: blur(6px);
-    }
-
-    .lookbook-details {
-      padding: 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .lookbook-title {
-      font-size: 0.96rem;
-      font-family: var(--font-serif);
-      font-weight: 700;
-      color: var(--c-ink);
-      line-height: 1.25;
-    }
-
-    .lookbook-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      font-size: 0.74rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--c-bordeaux);
-      border: 1px solid var(--c-gold-border);
-      padding: 8px 12px;
-      border-radius: var(--radius-full);
-      background: var(--c-blush-soft);
-      transition: var(--transition-fast);
-      margin-top: 6px;
-    }
-
-    .lookbook-btn:hover {
-      background: var(--c-bordeaux);
-      color: #FFFFFF;
-      border-color: var(--c-bordeaux);
-    }
-
-    /* ── Section Dédiée Vidéothèque ── */
-    .video-section {
-      background: linear-gradient(180deg, var(--c-blush-soft) 0%, #FFFFFF 100%);
-      padding: 80px 0;
-      margin-top: 60px;
-      border-top: 1px solid var(--c-gold-border);
-    }
-
-    .video-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-      margin-top: 36px;
-    }
-
-    @media (min-width: 640px) {
-      .video-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (min-width: 1024px) {
-      .video-grid { grid-template-columns: repeat(3, 1fr); }
-    }
-
-    .video-box {
-      background: var(--c-white);
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      border: 1px solid var(--c-gold-border);
-      box-shadow: var(--shadow-subtle);
-    }
-
-    .video-box video {
-      width: 100%;
-      aspect-ratio: 9 / 16;
-      background: #000;
-      object-fit: cover;
-    }
-
-    .video-caption-box {
-      padding: 16px;
-    }
-
-    .video-caption-box strong {
-      display: block;
-      font-size: 1rem;
-      font-family: var(--font-serif);
-      color: var(--c-ink);
-      margin-bottom: 4px;
-    }
-
-    .video-caption-box p {
-      font-size: 0.82rem;
-      color: var(--c-text-muted);
-      line-height: 1.5;
-    }
-  </style>
 </head>
 
 <body>
@@ -250,6 +52,7 @@
         <a href="mariee-et-ceremonies.html" class="nav-link">Mariage & Cortège</a>
         <a href="academie.html" class="nav-link">Académie</a>
         <a href="lookbook.html" class="nav-link active">Lookbook</a>
+        <a href="contact.html" class="nav-link">Contact</a>
         <a href="index.html#contact" class="btn btn-gold" style="padding: 10px 22px; font-size: 0.8rem;">
           Prendre Rendez-vous
         </a>
@@ -550,7 +353,7 @@
           <p style="margin-bottom: 12px;">
             L'excellence de la beauté africaine incarnée par Latifath à Cotonou.
           </p>
-          <p style="color: var(--c-gold); font-family: var(--font-serif); font-style: italic;">
+          <p class="founder-tagline" style="color: var(--c-gold); font-size: 1.1rem;">
             Révéler la beauté, transmettre un métier.
           </p>
         </div>
@@ -561,6 +364,7 @@
           <p><a href="mariee-et-ceremonies.html">Mariage & Cortège</a></p>
           <p><a href="academie.html">Académie d'État</a></p>
           <p><a href="lookbook.html">Lookbook & Vidéos</a></p>
+          <p><a href="contact.html">Contact & Accès</a></p>
         </div>
 
         <div class="footer-col">
@@ -591,11 +395,9 @@
     </a>
   </aside>
 
-  <!-- Script Filtre Instantané 60 fps & Menu -->
   <script>
     document.getElementById('yearPlaceholder').textContent = new Date().getFullYear();
 
-    // Menu Mobile
     const burgerToggle = document.getElementById('burgerToggle');
     const desktopNav = document.querySelector('.desktop-nav');
     burgerToggle.addEventListener('click', () => {
@@ -612,7 +414,6 @@
       desktopNav.style.borderBottom = '1px solid var(--c-gold-border)';
     });
 
-    // Filtre 60 FPS sans lag
     const filterPills = document.querySelectorAll('.filter-pill');
     const cards = document.querySelectorAll('.lookbook-card');
 
